@@ -5,9 +5,9 @@ C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.FormCalendar.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.Form1.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.Properties.Resources.resources
+C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.ucBlank.resources
+C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.ucDays.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.csproj.GenerateResource.cache
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.csproj.CoreCompileInputs.cache
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.exe
 C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.pdb
-C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.ucBlank.resources
-C:\Users\lenovo\Documents\DENEME\1\deneme\CalenderForProject\CalenderForProject\obj\Debug\CalenderForProject.ucDays.resources

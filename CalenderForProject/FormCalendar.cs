@@ -20,7 +20,10 @@ namespace CalenderForProject
             loadDays();
         }
 
-        
+        private void FormCalendar_Load_1(object sender, EventArgs e)
+        {
+            loadDays();
+        }
 
         private void loadDays()
         {
@@ -56,29 +59,26 @@ namespace CalenderForProject
                 daycontainer.Controls.Add(ucdays);
 
             }
-            for(int i = 1;i <= 42-dayoftheweek-days; i++)
-            {
-                ucBlank ucBlank = new ucBlank();
-                daycontainer.Controls.Add(ucBlank);
-            }
-
+            
         }
-
+        
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-           
 
+            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            month--;
             // clear container
             daycontainer.Controls.Clear();
-            /*
+            
             if (monthname == "January")
             {
                 year--;
+                month = 12;
             }
-            */
-            month--;
+            
+            
 
-            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
 
             DateTime startofthemonth = new DateTime(year, month, 1);
@@ -104,28 +104,27 @@ namespace CalenderForProject
                 daycontainer.Controls.Add(ucdays);
 
             }
-            for (int i = 1; i <= 42 - (days + dayoftheweek); i++)
-            {
-                ucBlank ucBlank = new ucBlank();
-                daycontainer.Controls.Add(ucBlank);
-            }
+            
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
-        { 
+       
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             // clear container
             daycontainer.Controls.Clear();
 
-            /* if (monthname == "December")
+            if (monthname == "December")
              {
                  year++;
-             }
-            */
+                month = 0;
+            }
+            
             month++;
 
 
-            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+           monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
 
             DateTime startofthemonth = new DateTime(year, month, 1);
@@ -158,7 +157,7 @@ namespace CalenderForProject
                 daycontainer.Controls.Add(ucBlank);
             }
         }
-
+        
         
         
       
