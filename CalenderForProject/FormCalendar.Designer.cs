@@ -39,7 +39,7 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.Selected_Days = new System.Windows.Forms.ListBox();
+            this.buttonOkey = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LBDATE
@@ -124,6 +124,7 @@
             // 
             // btnPrevious
             // 
+            this.btnPrevious.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPrevious.Location = new System.Drawing.Point(1115, 790);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(111, 32);
@@ -134,6 +135,7 @@
             // 
             // btnNext
             // 
+            this.btnNext.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNext.Location = new System.Drawing.Point(1232, 790);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(111, 32);
@@ -149,28 +151,23 @@
             this.daycontainer.Size = new System.Drawing.Size(1182, 629);
             this.daycontainer.TabIndex = 22;
             // 
-            // Selected_Days
+            // buttonOkey
             // 
-            this.Selected_Days.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Selected_Days.FormattingEnabled = true;
-            this.Selected_Days.ItemHeight = 24;
-            this.Selected_Days.Items.AddRange(new object[] {
-            "SELECTED DATES"});
-            this.Selected_Days.Location = new System.Drawing.Point(1378, 121);
-            this.Selected_Days.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.Selected_Days.Name = "Selected_Days";
-            this.Selected_Days.ScrollAlwaysVisible = true;
-            this.Selected_Days.Size = new System.Drawing.Size(191, 340);
-            this.Selected_Days.TabIndex = 33;
-            this.Selected_Days.Click += new System.EventHandler(this.Selected_Days_SelectedIndexChanged);
-            this.Selected_Days.SelectedIndexChanged += new System.EventHandler(this.Selected_Days_SelectedIndexChanged);
+            this.buttonOkey.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonOkey.Location = new System.Drawing.Point(180, 785);
+            this.buttonOkey.Name = "buttonOkey";
+            this.buttonOkey.Size = new System.Drawing.Size(137, 37);
+            this.buttonOkey.TabIndex = 33;
+            this.buttonOkey.Text = "OK";
+            this.buttonOkey.UseVisualStyleBackColor = true;
+            this.buttonOkey.Click += new System.EventHandler(this.buttonOkey_Click);
             // 
             // FormCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1611, 913);
-            this.Controls.Add(this.Selected_Days);
+            this.Controls.Add(this.buttonOkey);
             this.Controls.Add(this.LBDATE);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
@@ -205,7 +202,7 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.FlowLayoutPanel daycontainer;
-        private System.Windows.Forms.ListBox Selected_Days;
+        private System.Windows.Forms.Button buttonOkey;
     }
 }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lbdays = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbdays
@@ -43,11 +44,22 @@
             this.lbdays.Click += new System.EventHandler(this.ucDays_DoubleClick);
             this.lbdays.DoubleClick += new System.EventHandler(this.ucDays_DoubleClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(65, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 21);
+            this.label1.TabIndex = 1;
+            // 
             // ucDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbdays);
             this.Name = "ucDays";
             this.Size = new System.Drawing.Size(162, 100);
@@ -61,5 +73,6 @@
         #endregion
 
         public System.Windows.Forms.Label lbdays;
+        private System.Windows.Forms.Label label1;
     }
 }

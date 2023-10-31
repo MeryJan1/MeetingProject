@@ -37,71 +37,17 @@ namespace CalenderForProject
 
         public FormCalendar()
         {
-            ListBox Selected_Days = new ListBox();
-            Selected_Days.Items.Clear();
-            foreach (string item in MyListSingleton.Instance.MyList)
-            {
-                Selected_Days.Items.Add(item);
-            }
-
-            InitializeComponent();
-          
-         /*  ucDays userControl = new ucDays();
-            Controls.Add(userControl);
-            userControl.Dock = DockStyle.Top;
-
-            userControl.VeriIletildi += (sender, veri) =>
-            {
-                if(!Selected_Days.Items.Contains(veri))
-                Selected_Days.Items.Add(veri);
-            };
-        */
+           
+            InitializeComponent();         
+       
         }
 
         private void FormCalendar_Load(object sender, EventArgs e)
         {
             loadDays();
-            /*if (!Selected_Days.Items.Contains(ucDays.Date))
-                Selected_Days.Items.Add(ucDays.Date);
-           */
-
+           
         }
-
-        private void Selected_Days_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            int seçilenIndex = Selected_Days.SelectedIndex;
-
-            if (seçilenIndex >= 0)
-            {
-                if (seçilenIndex >= 0 && seçilenIndex < MyListSingleton.Instance.MyList.Count)
-                {
-                    string seçilenSayı = MyListSingleton.Instance.MyList[seçilenIndex];
-
-                    DialogResult result = MessageBox.Show(
-                        $"Do you want to delete this date? ({seçilenSayı})",
-                        "Delete date",
-                        MessageBoxButtons.YesNo
-                    );
-                    if (result == DialogResult.Yes)
-                    {
-                        MyListSingleton.Instance.MyList.RemoveAt(seçilenIndex); // List koleksiyonundan sayıyı siler
-                        Selected_Days.Items.RemoveAt(seçilenIndex); // ListBox'tan sayıyı siler
-                    }
-
-                }
-                else
-                {
-                    // İndeks geçerli değil, hata durumunu işle
-                    MessageBox.Show("Invalid index value.");
-                }
-
-                
-
-               
-            }
-        }
-
+        
         //***********CALENDAR************************
 
 
@@ -196,7 +142,11 @@ namespace CalenderForProject
             
         }
 
-        
+        private void buttonOkey_Click(object sender, EventArgs e)
+        {
+            FormTitle formTitle = new FormTitle();
+            formTitle.Show();
+        }
 
         private void btnNext_Click(object sender, EventArgs e)
         {

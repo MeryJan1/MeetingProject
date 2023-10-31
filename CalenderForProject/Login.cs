@@ -19,13 +19,7 @@ namespace CalenderForProject
            
 
         }
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
+        
 
         private async void BtnLogin_ClickAsync(object sender, EventArgs e)
         {
@@ -42,7 +36,7 @@ namespace CalenderForProject
                   // İsim ve soyisim girişi yapıldığında bu kısım çalışır.
                   string userNameSurname = txtName.Text;
 
-                  string LoginMassage = $"Welcome {userNameSurname}! Login Date{accessTimeString}";
+                  string LoginMassage = $"Welcome {userNameSurname}! Login Date{accessTimeString} \n Select the days by clicking on the days. Then press OK to confirm.";
                   FormCalendar formCalendar = new FormCalendar();
                   formCalendar.Show();
                   MessageBox.Show(LoginMassage);

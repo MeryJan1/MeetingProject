@@ -6,7 +6,7 @@ namespace CalenderForProject
 {
     public partial class ucDays : UserControl
     {
-        public event EventHandler<string> TarihTiklandi;
+        
 
         public static string Date;
         public ucDays()
@@ -24,10 +24,20 @@ namespace CalenderForProject
 
         private void ucDays_DoubleClick(object sender, EventArgs e)
         {
-            MyListSingleton.static_day = lbdays.Text;
-            MyListSingleton.Instance.MyList.Add(MyListSingleton.static_day + "/" + MyListSingleton.static_month + "/" + MyListSingleton.static_year);
+            // Tıklanan tarihi bir olay ile ana forma iletiyoruz
+            string date = MyListSingleton.static_day + "/" + MyListSingleton.static_month + "/" + MyListSingleton.static_year;
+            if (!MyListSingleton.Instance.MyList.Contains(date))
+            {
+                MyListSingleton.Instance.MyList.Add(date);
+                label1.Text = "Selected";
+            }
+            else {
+                MyListSingleton.Instance.MyList.Remove(date);
+                label1.Text = "";
+            }
+                   
             
-
+            
         }
 
 }

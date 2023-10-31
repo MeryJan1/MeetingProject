@@ -52,6 +52,12 @@
     <Compile Include="FormCalendar.Designer.cs">
       <DependentUpon>FormCalendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTitle.Designer.cs">
+      <DependentUpon>FormTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="FormCalendar.resx">
       <DependentUpon>FormCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTitle.resx">
+      <DependentUpon>FormTitle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
