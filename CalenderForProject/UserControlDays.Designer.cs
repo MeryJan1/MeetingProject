@@ -40,6 +40,8 @@
             this.lbdays.Size = new System.Drawing.Size(30, 24);
             this.lbdays.TabIndex = 0;
             this.lbdays.Text = "00";
+            this.lbdays.Click += new System.EventHandler(this.ucDays_DoubleClick);
+            this.lbdays.DoubleClick += new System.EventHandler(this.ucDays_DoubleClick);
             // 
             // ucDays
             // 
@@ -49,8 +51,8 @@
             this.Controls.Add(this.lbdays);
             this.Name = "ucDays";
             this.Size = new System.Drawing.Size(162, 100);
-          
-            this.Click += new System.EventHandler(this.UserControlDays_Click);
+            this.Click += new System.EventHandler(this.ucDays_DoubleClick);
+            this.DoubleClick += new System.EventHandler(this.ucDays_DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 
