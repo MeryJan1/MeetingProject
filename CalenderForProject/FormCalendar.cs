@@ -9,9 +9,10 @@ namespace CalenderForProject
 
     public partial class FormCalendar : Form
     {
+        
         public class MyListSingleton
         {
-            
+
             public static string static_day, static_month, static_year;
             private static MyListSingleton instance;
             public List<string> MyList { get; }
