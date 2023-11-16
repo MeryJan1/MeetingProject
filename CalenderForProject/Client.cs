@@ -142,7 +142,7 @@ namespace CalenderForProject
                 Console.WriteLine(string.Format("Client Başlatıldı. Port: {0}", port));
                 Console.WriteLine("-----------------------------");
 
-                ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127.0.0.1"), port));
+                ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127git .0.0.1"), port));
                 exampleSocket.Start();
 
                 // File PATH
