@@ -25,7 +25,7 @@ namespace CalenderForProject
            // open messagebox for sharing link
            // closed this Form
 
-            
+            this.Hide();
         }
     }
 }

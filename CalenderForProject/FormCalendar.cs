@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net.Sockets;
+using System.Text;
 using System.Windows.Forms;
 
 namespace CalenderForProject
 {
    
 
-    public partial class FormCalendar : Form
+    public partial class FormCalendar : Form 
     {
-        
+
+
+
         public class MyListSingleton
         {
 
@@ -46,7 +50,6 @@ namespace CalenderForProject
         private void FormCalendar_Load(object sender, EventArgs e)
         {
             loadDays();
-           
         }
         
         //***********CALENDAR************************
@@ -148,6 +151,18 @@ namespace CalenderForProject
             FormTitle formTitle = new FormTitle();
             formTitle.Show();
         }
+
+        private void lstBoxPlans_Click(object sender, EventArgs e)
+        {
+            if(lstBoxPlans.SelectedItems!=null)
+            lstBoxPlans.Items.Remove(lstBoxPlans.SelectedItem);
+            else
+            {
+                MessageBox.Show("No item selected.");
+            }
+        }
+
+        
 
         private void btnNext_Click(object sender, EventArgs e)
         {

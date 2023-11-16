@@ -46,11 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCalendar.Designer.cs">
       <DependentUpon>FormCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJoinwithCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJoinwithCode.Designer.cs">
+      <DependentUpon>FormJoinwithCode.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTitle.cs">
       <SubType>Form</SubType>
@@ -58,11 +72,11 @@
     <Compile Include="FormTitle.Designer.cs">
       <DependentUpon>FormTitle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,14 +92,20 @@
     <Compile Include="UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCalendar.resx">
       <DependentUpon>FormCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJoinwithCode.resx">
+      <DependentUpon>FormJoinwithCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTitle.resx">
       <DependentUpon>FormTitle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

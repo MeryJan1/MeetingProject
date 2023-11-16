@@ -40,6 +40,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonOkey = new System.Windows.Forms.Button();
+            this.lstBoxPlans = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // LBDATE
@@ -162,11 +163,31 @@
             this.buttonOkey.UseVisualStyleBackColor = true;
             this.buttonOkey.Click += new System.EventHandler(this.buttonOkey_Click);
             // 
+            // lstBoxPlans
+            // 
+            this.lstBoxPlans.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lstBoxPlans.FormattingEnabled = true;
+            this.lstBoxPlans.ItemHeight = 24;
+            this.lstBoxPlans.Items.AddRange(new object[] {
+            "111111111",
+            "1111111111",
+            "22222",
+            "222222222",
+            "333333333",
+            "444"});
+            this.lstBoxPlans.Location = new System.Drawing.Point(1381, 125);
+            this.lstBoxPlans.Name = "lstBoxPlans";
+            this.lstBoxPlans.Size = new System.Drawing.Size(218, 412);
+            this.lstBoxPlans.TabIndex = 34;
+            this.lstBoxPlans.Click += new System.EventHandler(this.lstBoxPlans_Click);
+            this.lstBoxPlans.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstBoxPlans_Click);
+            // 
             // FormCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1611, 913);
+            this.ClientSize = new System.Drawing.Size(1642, 913);
+            this.Controls.Add(this.lstBoxPlans);
             this.Controls.Add(this.buttonOkey);
             this.Controls.Add(this.LBDATE);
             this.Controls.Add(this.label8);
@@ -203,6 +224,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.FlowLayoutPanel daycontainer;
         private System.Windows.Forms.Button buttonOkey;
+        private System.Windows.Forms.ListBox lstBoxPlans;
     }
 }
 
