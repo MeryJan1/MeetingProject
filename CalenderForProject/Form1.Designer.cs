@@ -54,7 +54,7 @@
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(202, 72);
             this.btnCreate.TabIndex = 1;
-            this.btnCreate.Text = "Schedule a Meeting";
+            this.btnCreate.Text = "Create a Planing";
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 

@@ -1,10 +1,12 @@
-﻿using System;
+﻿/*
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
-
+using System.IO.Compression;
+using System.Text;
 
 namespace CalenderForProject
 {
@@ -49,6 +51,8 @@ namespace CalenderForProject
 
             public void SendData(ExampleDTO exampleDTO)
             {
+               
+
                 using (MemoryStream ms = new MemoryStream())
                 using (BinaryWriter writer = new BinaryWriter(ms))
                 {
@@ -70,6 +74,7 @@ namespace CalenderForProject
                         _Socket.Send(serializedData, i, remainingBytes, SocketFlags.None);
                     }
                 }
+////bu kısım örnek için kalmıştı kodun parçası değil
                 /*   using (var ms = new MemoryStream())
                    {
                        // İlgili object'imizi binary'e serialize ediyoruz.
@@ -94,6 +99,7 @@ namespace CalenderForProject
                        if (socketError != SocketError.Success)
                            Console.WriteLine("Server bağlantısı koptu!");
                    }*/
+/*
             }
             #endregion
 
@@ -142,17 +148,21 @@ namespace CalenderForProject
                 Console.WriteLine(string.Format("Client Başlatıldı. Port: {0}", port));
                 Console.WriteLine("-----------------------------");
 
-                ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127git .0.0.1"), port));
+                ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127 .0.0.1"), port));
                 exampleSocket.Start();
 
                 // File PATH
-                string filePath = "example.txt";
+                string folderPath = @"C:\Path\To\Your\Folder";
+                string zipFilePath = @"C:\Path\To\Your\Folder.zip";
+
+                // Klasörü zip dosyası olarak sıkıştır
+                ZipFile.CreateFromDirectory(folderPath, zipFilePath);
+
                 ExampleDTO exampleDTO = new ExampleDTO()
                 {
-
                     Message = string.Format("{0} ip numaralı client üzerinden geliyorum!", GetLocalIPAddress()),
-                    FileName = Path.GetFileName(filePath),
-                    FileData = File.ReadAllBytes(filePath)
+                    FileName = Path.GetFileName(zipFilePath),
+                    FileData = File.ReadAllBytes(zipFilePath)
                 };
 
                 exampleSocket.SendData(exampleDTO);
@@ -174,3 +184,4 @@ namespace CalenderForProject
 
 
 }
+*/
