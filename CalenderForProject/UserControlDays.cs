@@ -22,23 +22,28 @@ namespace CalenderForProject
 
         }
 
-        private void ucDays_DoubleClick(object sender, EventArgs e)
+
+
+        private void ucDays_Click(object sender, EventArgs e)
         {
-            // Tıklanan tarihi bir olay ile ana forma iletiyoruz
-            string date = MyListSingleton.static_day + "/" + MyListSingleton.static_month + "/" + MyListSingleton.static_year;
-            if (!MyListSingleton.Instance.MyList.Contains(date))
+            static_day =lbdays.Text;
+
+            string date = static_day + "." + static_month + "." + static_year;
+            if (!TarihListesi.Contains(date))
             {
-                MyListSingleton.Instance.MyList.Add(date);
+                TarihListesi.Add(date);
                 label1.Text = "Selected";
             }
-            else {
-                MyListSingleton.Instance.MyList.Remove(date);
+            else
+            {
+                TarihListesi.Remove(date);
                 label1.Text = "";
             }
-                   
-            
-            
         }
 
-}
+        private void ucDays_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

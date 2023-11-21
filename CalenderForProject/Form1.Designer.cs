@@ -78,6 +78,7 @@
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnJoin);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "First Page";
             this.ResumeLayout(false);
             this.PerformLayout();

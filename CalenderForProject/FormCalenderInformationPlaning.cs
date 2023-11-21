@@ -3,38 +3,40 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
-using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using static CalenderForProject.FormCalenderJoinedWithCode;
-using static CalenderForProject.FormJoinwithCode;
+using static CalenderForProject.FormLogin;
+using static CalenderForProject.FormCalendar;
+using System.Globalization;
+
 
 namespace CalenderForProject
 {
-    public partial class FormCalenderJoinedWithCode : Form
+    public partial class FormCalenderInformationPlaning : Form
     {
-        public static List<string> Tarihlistesi = new List<string> { };
-        public static string Static_Day, Static_Month, Static_Year;
-        int year, month; // for calendar
 
-        public FormCalenderJoinedWithCode()
+        public static string static_day, static_month, static_year;
+        int year, month;
+
+        public FormCalenderInformationPlaning()
         {
             InitializeComponent();
         }
 
-        private void FormCalenderJoinedWithCode_Load(object sender, EventArgs e)
+
+        private void FormCalenderInformationPlaning_Load(object sender, EventArgs e)
         {
             loadDays();
-            loadBox();
+            loadTxtBox();
         }
 
-        private void loadBox()
+        private void loadTxtBox()
         {
-            string filePath = Path.Combine("C:\\Users\\lenovo\\Documents\\create",KullanıcıAdı , Başlık, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
-            string file = Path.Combine("C:\\Users\\lenovo\\Documents\\create", KullanıcıAdı, Başlık, "Description.txt");
+            
+            string filePath = Path.Combine("C:\\Users\\lenovo\\Documents\\create", FormLogin.userNameSurname, FormCalendar.title, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
+            string file = Path.Combine("C:\\Users\\lenovo\\Documents\\create", FormLogin.userNameSurname , FormCalendar.title, "Description.txt");
             txtBoxTitle.Text = FormCalendar.title;
             if (File.Exists(file))
             {
@@ -44,7 +46,11 @@ namespace CalenderForProject
                 // RichTextBox'a yaz description burada gözükecek
                 richBoxDescription.Text = content;
             }
-           
+            else
+            {
+                // Dosya bulunamazsa bir uyarı verebilirsiniz.
+                MessageBox.Show("The file does not exist.");
+            }
             // Dosya var mı kontrolü
             if (File.Exists(filePath))
             {
@@ -52,9 +58,15 @@ namespace CalenderForProject
                 string[] lines = File.ReadAllLines(filePath);
                 lstBoxPlans.Items.AddRange(lines);
             }
-            txtBoxTitle.Text = Başlık;
-
+            
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        // for calendar
 
         private void loadDays()
         {
@@ -66,8 +78,8 @@ namespace CalenderForProject
             string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
 
-            Static_Year = year.ToString();
-            Static_Month = month.ToString();
+            static_year = year.ToString();
+            static_month = month.ToString();
             // Get first day of the month
             DateTime startofthemonth = new DateTime(year, month, 1);
 
@@ -87,9 +99,9 @@ namespace CalenderForProject
             // user control for days
             for (int i = 1; i <= days; i++)
             {
-               UserControlDaysJoinWithCode userControlDaysJoinWithCode = new UserControlDaysJoinWithCode();
-                userControlDaysJoinWithCode.days(i);
-                daycontainer.Controls.Add(userControlDaysJoinWithCode);
+                UserControlInformationPlaning userControlInformationPlaning = new UserControlInformationPlaning();
+                userControlInformationPlaning.days(i);
+                daycontainer.Controls.Add(userControlInformationPlaning);
 
             }
 
@@ -109,8 +121,8 @@ namespace CalenderForProject
                 month = 12;
             }
 
-            Static_Year = year.ToString();
-            Static_Month = month.ToString();
+            static_year = year.ToString();
+            static_month = month.ToString();
 
             monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
@@ -133,46 +145,12 @@ namespace CalenderForProject
             // user control for days
             for (int i = 1; i <= days; i++)
             {
-                UserControlDaysJoinWithCode userControlDaysJoinWithCode = new UserControlDaysJoinWithCode();
-                userControlDaysJoinWithCode.days(i);
-                daycontainer.Controls.Add(userControlDaysJoinWithCode);
-
+                UserControlInformationPlaning userControlInformationPlaning = new UserControlInformationPlaning();
+                userControlInformationPlaning.days(i);
+                daycontainer.Controls.Add(userControlInformationPlaning);
             }
 
         }
-
-        private void buttonOkey_Click(object sender, EventArgs e)
-        {
-
-            // tarihlistesinde bulunan stringler TümTarihler.txt klasında da bulunuyorsa o stringdeğişkeni.txt dosyasına gidip KullanıcıAdı stringini yazdıran kod.
-            string DosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
-            string[] Tarihler = File.ReadAllLines(DosyaYolu) ;
-            
-            foreach (string date in Tarihler)
-            {
-                foreach (string tarih in Tarihlistesi)
-                {
-                    string tarihDosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
-
-                    if (File.Exists(tarihDosyaYolu)&&(date==tarih))
-                    {
-                        // Dosya varsa, KullanıcıAdı'nı dosyaya yaz
-                        File.WriteAllText(tarihDosyaYolu, KullanıcıAdı);
-
-                    }
-
-                }
-            }
-            
-        }
-
-
-
-
-
-
-
-
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -188,8 +166,8 @@ namespace CalenderForProject
 
             month++;
 
-            Static_Year = year.ToString();
-            Static_Month = month.ToString();
+            static_year = year.ToString();
+            static_month = month.ToString();
 
             monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
@@ -212,24 +190,18 @@ namespace CalenderForProject
             // user control for days
             for (int i = 1; i <= days; i++)
             {
-                UserControlDaysJoinWithCode userControlDaysJoinWithCode = new UserControlDaysJoinWithCode();
-                userControlDaysJoinWithCode.days(i);
-                daycontainer.Controls.Add(userControlDaysJoinWithCode);
+                UserControlInformationPlaning userControlInformationPlaning = new UserControlInformationPlaning();
+                userControlInformationPlaning.days(i);
+                daycontainer.Controls.Add(userControlInformationPlaning);
 
             }
 
-            for (int i = 1; i <= 42 - (days + dayoftheweek); i++)
-            {
-                ucBlank ucBlank = new ucBlank();
-                daycontainer.Controls.Add(ucBlank);
-            }
+            
         }
 
 
 
 
-        //**************************************************************
     }
-
 
 }

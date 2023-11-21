@@ -105,6 +105,7 @@
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.txtName);
             this.Name = "FormJoinwithCode";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormJoinwithCode";
             this.ResumeLayout(false);
             this.PerformLayout();

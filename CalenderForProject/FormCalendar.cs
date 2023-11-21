@@ -4,7 +4,8 @@ using System.Globalization;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
-
+using System.IO;
+using static CalenderForProject.FormLogin;
 namespace CalenderForProject
 {
    
@@ -12,31 +13,10 @@ namespace CalenderForProject
     public partial class FormCalendar : Form 
     {
 
-
-
-        public class MyListSingleton
-        {
-
-            public static string static_day, static_month, static_year;
-            private static MyListSingleton instance;
-            public List<string> MyList { get; }
-            private MyListSingleton()
-            {
-                MyList = new List<string>();
-            }
-
-            public static MyListSingleton Instance
-            {
-                get
-                {
-                    if (instance == null)
-                    {
-                        instance = new MyListSingleton();
-                    }
-                    return instance;
-                }
-            }
-        }
+        public static List<string> TarihListesi = new List<string> { };
+        public static string static_day, static_month, static_year, title;
+        
+       
 
         int year, month; // for calendar
 
@@ -50,6 +30,7 @@ namespace CalenderForProject
         private void FormCalendar_Load(object sender, EventArgs e)
         {
             loadDays();
+            loadTxtBox();
         }
         
         //***********CALENDAR************************
@@ -58,7 +39,25 @@ namespace CalenderForProject
         private void FormCalendar_Load_1(object sender, EventArgs e)
         {
             loadDays();
+            loadTxtBox();
 
+        }
+
+        private void loadTxtBox()
+        {
+            string filePath = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\başlık.txt";
+
+            // Dosya var mı kontrolü
+            if (File.Exists(filePath))
+            {
+                // Dosyadan satırları oku ve ListBox'a ekle
+                string[] lines = File.ReadAllLines(filePath);
+                lstBoxPlans.Items.AddRange(lines);
+            }
+            else
+            {
+                MessageBox.Show("Dosya bulunamadı!");
+            }
         }
 
         private void loadDays()
@@ -71,8 +70,8 @@ namespace CalenderForProject
             string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
 
-            MyListSingleton.static_year = year.ToString();
-            MyListSingleton.static_month = month.ToString();
+            static_year = year.ToString();
+            static_month = month.ToString();
             // Get first day of the month
             DateTime startofthemonth = new DateTime(year, month, 1);
 
@@ -99,7 +98,23 @@ namespace CalenderForProject
             }
             
         }
-        
+
+        private void lstBoxPlans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lstBoxPlans.SelectedItems != null && lstBoxPlans.SelectedIndex != -1)
+            {
+                title = lstBoxPlans.SelectedItem.ToString();
+                FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
+                formCalenderInformationPlaning.Show();
+            }
+               
+
+            else
+            {
+                MessageBox.Show("No item selected.");
+            }
+        }
+
         private void btnPrevious_Click(object sender, EventArgs e)
         {
 
@@ -114,8 +129,8 @@ namespace CalenderForProject
                 month = 12;
             }
 
-            MyListSingleton.static_year = year.ToString();
-            MyListSingleton.static_month = month.ToString();
+            static_year = year.ToString();
+            static_month = month.ToString();
 
             monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
@@ -140,8 +155,8 @@ namespace CalenderForProject
             {
                 ucDays ucdays = new ucDays();
                 ucdays.days(i);
-                daycontainer.Controls.Add(ucdays);
 
+                daycontainer.Controls.Add(ucdays);
             }
             
         }
@@ -152,15 +167,11 @@ namespace CalenderForProject
             formTitle.Show();
         }
 
-        private void lstBoxPlans_Click(object sender, EventArgs e)
-        {
-            if(lstBoxPlans.SelectedItems!=null)
-            lstBoxPlans.Items.Remove(lstBoxPlans.SelectedItem);
-            else
-            {
-                MessageBox.Show("No item selected.");
-            }
-        }
+       
+
+        
+
+        
 
         
 
@@ -178,8 +189,8 @@ namespace CalenderForProject
             
             month++;
 
-            MyListSingleton.static_year = year.ToString();
-            MyListSingleton.static_month = month.ToString();
+            static_year = year.ToString();
+            static_month = month.ToString();
 
             monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;

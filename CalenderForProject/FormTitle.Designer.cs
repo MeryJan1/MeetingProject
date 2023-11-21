@@ -106,7 +106,7 @@
             this.Controls.Add(this.richBoxDescribtion);
             this.Controls.Add(this.txtBoxTitleMeet);
             this.Name = "FormTitle";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTitle";
             this.ResumeLayout(false);
             this.PerformLayout();
