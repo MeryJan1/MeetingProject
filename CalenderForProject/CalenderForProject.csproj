@@ -155,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControlBlank.resx">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
@@ -180,6 +181,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir %282%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper images_ 4K, HD, Full HD, Dual Screen.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Das.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simplistic Green Fern Leaf Wallpaper - 120W x 75H inches _ Peel &amp; Stick Paper.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

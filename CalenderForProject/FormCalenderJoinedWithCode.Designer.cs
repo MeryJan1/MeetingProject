@@ -39,13 +39,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.richBoxDescription = new System.Windows.Forms.RichTextBox();
             this.txtBoxTitle = new System.Windows.Forms.TextBox();
             this.lstBoxPlans = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // buttonOkey
@@ -161,13 +161,6 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // daycontainer
-            // 
-            this.daycontainer.Location = new System.Drawing.Point(47, 177);
-            this.daycontainer.Name = "daycontainer";
-            this.daycontainer.Size = new System.Drawing.Size(1182, 629);
-            this.daycontainer.TabIndex = 35;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -227,10 +220,19 @@
             this.label10.TabIndex = 66;
             this.label10.Text = "People who log in :";
             // 
+            // daycontainer
+            // 
+            this.daycontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.daycontainer.Location = new System.Drawing.Point(47, 177);
+            this.daycontainer.Name = "daycontainer";
+            this.daycontainer.Size = new System.Drawing.Size(1182, 629);
+            this.daycontainer.TabIndex = 35;
+            // 
             // FormCalenderJoinedWithCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(1642, 913);
             this.Controls.Add(this.lstBoxPlans);
             this.Controls.Add(this.label10);
@@ -276,8 +278,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richBoxDescription;
-        private System.Windows.Forms.TextBox txtBoxTitle;
         private System.Windows.Forms.ListBox lstBoxPlans;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtBoxTitle;
     }
 }
