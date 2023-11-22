@@ -17,17 +17,17 @@ namespace CalenderForProject
         {
             InitializeComponent();
         }
-        public static string KullanıcıAdı, Başlık;
-        
+        public static string KullanıcıAdı, Başlık, İsim;
+
+       
 
         private async void BtnLogin_ClickAsync(object sender, EventArgs e)
         {
             string enteredCode = txtBoxCode.Text;
             Dictionary<string, string> DicName = new Dictionary<string, string>();
             Dictionary<string, string> DicTitle = new Dictionary<string, string>();
-            // Dosya yolu
+            
             string filePath = $"C:\\Users\\lenovo\\Documents\\create\\Dictionary\\KullanıcıAdı.txt";
-            // Dosyadan okuma işlemi
             using (StreamReader sr = new StreamReader(filePath))
             {
                 string line;
@@ -47,9 +47,7 @@ namespace CalenderForProject
             }
 
 
-            // Dosya yolu
-            string path = $"C:\\Users\\lenovo\\Documents\\create\\Dictionary\\başlık.txt";
-            // Dosyadan okuma işlemi
+            string path = $"C:\\Users\\lenovo\\Documents\\create\\Dictionary\\Başlık.txt";
             using (StreamReader sr = new StreamReader(path))
             {
                 string line;
@@ -85,7 +83,7 @@ namespace CalenderForProject
             }
             else
             {
-                string userNameSurname = txtName.Text;
+                İsim = txtName.Text;
                 
                 bool isCodeFound = false;
                 foreach (string line in fileLines)
@@ -102,11 +100,11 @@ namespace CalenderForProject
 
                 if (isCodeFound)
                 {
-                    string loginMessage = $"Welcome {userNameSurname}! Login Date {accessTimeString}\n Select the days by clicking on the days. Then press OK to confirm.";
+                    string loginMessage = $"Welcome {İsim}! Login Date {accessTimeString}\n Select the days by clicking on the days. Then press OK to confirm.";
                     FormCalenderJoinedWithCode formCalenderJoinedWithCode = new FormCalenderJoinedWithCode();
                     formCalenderJoinedWithCode.Show();
                     MessageBox.Show(loginMessage);
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {

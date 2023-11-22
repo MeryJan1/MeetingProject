@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lbdays = new System.Windows.Forms.Label();
-            this.rBox = new System.Windows.Forms.RichTextBox();
+            this.lstBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -38,7 +38,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(71, 10);
+            this.label1.Location = new System.Drawing.Point(63, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 21);
             this.label1.TabIndex = 3;
@@ -54,23 +54,23 @@
             this.lbdays.Text = "00";
             this.lbdays.Click += new System.EventHandler(this.lbdays_Click);
             // 
-            // rBox
+            // lstBox
             // 
-            this.rBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.rBox.Enabled = false;
-            this.rBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rBox.Location = new System.Drawing.Point(25, 33);
-            this.rBox.Name = "rBox";
-            this.rBox.Size = new System.Drawing.Size(133, 67);
-            this.rBox.TabIndex = 12;
-            this.rBox.Text = "";
+            this.lstBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lstBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lstBox.FormattingEnabled = true;
+            this.lstBox.ItemHeight = 18;
+            this.lstBox.Location = new System.Drawing.Point(42, 24);
+            this.lstBox.Name = "lstBox";
+            this.lstBox.Size = new System.Drawing.Size(120, 76);
+            this.lstBox.TabIndex = 4;
             // 
             // UserControlDaysJoinWithCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Controls.Add(this.rBox);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.lstBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbdays);
             this.Name = "UserControlDaysJoinWithCode";
@@ -86,6 +86,6 @@
 
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lbdays;
-        private System.Windows.Forms.RichTextBox rBox;
+        private System.Windows.Forms.ListBox lstBox;
     }
 }

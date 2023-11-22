@@ -77,13 +77,12 @@ namespace CalenderForProject
                   FormCalendar formCalendar = new FormCalendar();
                   formCalendar.Show();
                   MessageBox.Show(LoginMassage);
-                  this.Hide();
+                  this.Close();
               }
             
 
            
         }
-
         
     }
 }

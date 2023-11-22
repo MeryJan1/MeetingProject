@@ -193,7 +193,7 @@
             this.richBoxDescription.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richBoxDescription.Location = new System.Drawing.Point(1234, 283);
             this.richBoxDescription.Name = "richBoxDescription";
-            this.richBoxDescription.Size = new System.Drawing.Size(348, 141);
+            this.richBoxDescription.Size = new System.Drawing.Size(325, 141);
             this.richBoxDescription.TabIndex = 48;
             this.richBoxDescription.Text = "";
             // 
@@ -202,7 +202,7 @@
             this.txtBoxTitle.Font = new System.Drawing.Font("Calibri", 10.8F);
             this.txtBoxTitle.Location = new System.Drawing.Point(1231, 208);
             this.txtBoxTitle.Name = "txtBoxTitle";
-            this.txtBoxTitle.Size = new System.Drawing.Size(340, 29);
+            this.txtBoxTitle.Size = new System.Drawing.Size(328, 29);
             this.txtBoxTitle.TabIndex = 51;
             // 
             // lstBoxPlans
@@ -211,16 +211,17 @@
             this.lstBoxPlans.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstBoxPlans.FormattingEnabled = true;
             this.lstBoxPlans.ItemHeight = 24;
-            this.lstBoxPlans.Location = new System.Drawing.Point(1236, 504);
+            this.lstBoxPlans.Location = new System.Drawing.Point(1239, 493);
             this.lstBoxPlans.Name = "lstBoxPlans";
-            this.lstBoxPlans.Size = new System.Drawing.Size(335, 148);
+            this.lstBoxPlans.Size = new System.Drawing.Size(320, 172);
             this.lstBoxPlans.TabIndex = 65;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Enabled = false;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(1235, 466);
+            this.label10.Location = new System.Drawing.Point(1238, 455);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(172, 24);
             this.label10.TabIndex = 66;
@@ -249,7 +250,7 @@
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.daycontainer);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCalenderJoinedWithCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCalenderJoinedWithCode";

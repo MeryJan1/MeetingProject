@@ -30,14 +30,14 @@ namespace CalenderForProject
         {
             FormJoinwithCode joinwithCode = new FormJoinwithCode();
             joinwithCode.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Form()

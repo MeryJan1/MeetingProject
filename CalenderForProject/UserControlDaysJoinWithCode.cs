@@ -33,41 +33,29 @@ namespace CalenderForProject
         {
             lbdays.Text = numdays + "";
             string tarih = numdays+"."+ FormCalenderJoinedWithCode.Static_Month + "." + FormCalenderJoinedWithCode.Static_Year;
-            string filepath = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates"; 
-            string file = Path.Combine(filepath, "TümTarihler.txt");
-            string path = Path.Combine(filepath, tarih+".txt");
+            string file = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
+            string path = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
 
-            // FileStream ile dosya okuma
-            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            string[] tarihler = File.ReadAllLines(file) ;
+
+            if (tarihler.Contains(tarih))
             {
-                using (StreamReader reader = new StreamReader(fs, Encoding.UTF8))
+                ChangeBackgroundColor(Color.PeachPuff);
+                string[] lines = File.ReadAllLines(path);
+                lstBox.Items.Clear();
+                // Her bir satırı ListBox'a ekle
+                foreach (string line in lines)
                 {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        if (tarih == line)
-                        {
-                            
-                            ChangeBackgroundColor(Color.MediumPurple);
-                            // FileStream ile dosya yazma ve okuma
-                            using (FileStream fsPath = new FileStream(path, FileMode.Open, FileAccess.Read))
-                            {
-                                using (StreamReader readerPath = new StreamReader(fsPath, Encoding.UTF8))
-                                {
-                                    rBox.Text = readerPath.ReadToEnd();
-                                    break;
-                                }
-                            }
-                        }
-                    }
+                    lstBox.Items.Add(line);
                 }
             }
 
+          
                 //Burada label üzerlerine kullanıcılar yazdırılacak.
                 //eğer TümTarihler.txt dosyasının içinde bu tarih varsa o tarihin dosyasına git aynı dizinde olmalı ve
                 //içindeki kullanıcıları tek tek labela yazdır.
 
-            }
+        }
 
         private void UserControlDaysJoinWithCode_Click(object sender, EventArgs e)
         {

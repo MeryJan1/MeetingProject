@@ -63,8 +63,13 @@ namespace CalenderForProject
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            FormCalendar formCalendar = new FormCalendar();
+            formCalendar.Show();
+
+            this.Close();
         }
+            
+            
 
         // for calendar
 

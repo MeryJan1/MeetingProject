@@ -80,6 +80,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "First Page";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

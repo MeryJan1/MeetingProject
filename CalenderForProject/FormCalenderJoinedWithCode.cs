@@ -33,8 +33,8 @@ namespace CalenderForProject
 
         private void loadBox()
         {
-            string filePath = Path.Combine("C:\\Users\\lenovo\\Documents\\create",KullanıcıAdı , Başlık, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
-            string file = Path.Combine("C:\\Users\\lenovo\\Documents\\create", KullanıcıAdı, Başlık, "Description.txt");
+            string filePath = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
+            string file = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Description.txt";
             txtBoxTitle.Text = FormCalendar.title;
             if (File.Exists(file))
             {
@@ -145,25 +145,49 @@ namespace CalenderForProject
         {
 
             // tarihlistesinde bulunan stringler TümTarihler.txt klasında da bulunuyorsa o stringdeğişkeni.txt dosyasına gidip KullanıcıAdı stringini yazdıran kod.
-            string DosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
-            string[] Tarihler = File.ReadAllLines(DosyaYolu) ;
             
-            foreach (string date in Tarihler)
+            string dosyaKlasoru = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates";
+            string tümTarihler = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
+            string tümKullanıcılarDosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";
+
+            // Tüm tarihleri oku
+            string[] tarihler = File.ReadAllLines(tümTarihler);
+
+            foreach (string tarih in tarihler)
             {
-                foreach (string tarih in Tarihlistesi)
+                // TarihListesi içindeki tarihleri kontrol et
+                if (Tarihlistesi.Contains(tarih))
                 {
                     string tarihDosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
 
-                    if (File.Exists(tarihDosyaYolu)&&(date==tarih))
+                    // Dosya varsa ve daha önce bu kullanıcı eklenmemişse
+                    if (File.Exists(tarihDosyaYolu) && !File.ReadAllText(tarihDosyaYolu).Contains(İsim))
                     {
-                        // Dosya varsa, KullanıcıAdı'nı dosyaya yaz
-                        File.WriteAllText(tarihDosyaYolu, KullanıcıAdı);
+                        // Tarih dosyasına ekle
+                        using (StreamWriter sw = File.AppendText(tarihDosyaYolu))
+                        {
+                            sw.WriteLine(İsim);
+                        }
+                    }
+                    if(File.Exists(tümKullanıcılarDosyaYolu) && !File.ReadAllText(tümKullanıcılarDosyaYolu).Contains(İsim))
+                    {
+                        // Tüm kullanıcılar dosyasına da ekle
+                        using (StreamWriter sw = File.AppendText(tümKullanıcılarDosyaYolu))
+                        {
+                            sw.WriteLine(İsim);
+                        }
 
                     }
 
                 }
             }
-            
+
+            MessageBox.Show("Your information saved!");
+            this.Close();
+            FormCalenderJoinedWithCode formCalenderJoinedWithCode = new FormCalenderJoinedWithCode();
+            formCalenderJoinedWithCode.Show();
+
+
         }
 
 

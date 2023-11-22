@@ -79,7 +79,8 @@ namespace CalenderForProject
             ////////////////////////////////////
             FormCreateCodecs formCreateCodecs = new FormCreateCodecs();  
             formCreateCodecs.Show();
-            this.Hide();
+
+            this.Close();
         }
 
 

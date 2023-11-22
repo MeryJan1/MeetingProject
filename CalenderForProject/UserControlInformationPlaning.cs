@@ -21,6 +21,11 @@ namespace CalenderForProject
             InitializeComponent();
         }
 
+        public void ChangeBackgroundColor(Color newColor)
+        {
+            this.BackColor = newColor;
+        }
+
         public void days(int numdays)
         {
             lbdays.Text = numdays + "";
@@ -29,27 +34,18 @@ namespace CalenderForProject
             string file = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{title}\\Dates\\TümTarihler.txt";;
             string path = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{title}\\Dates\\{tarih}.txt";
 
+            string[] tarihler = File.ReadAllLines(file);
 
-            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            if (tarihler.Contains(tarih))
             {
-                using (StreamReader reader = new StreamReader(fs, Encoding.UTF8))
+                ChangeBackgroundColor(Color.PeachPuff);
+
+                string[] lines = File.ReadAllLines(path);
+                lstBox.Items.Clear();
+                // Her bir satırı ListBox'a ekle
+                foreach (string line in lines)
                 {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        if (tarih == line)
-                        {
-                            // FileStream ile dosya yazma ve okuma
-                            using (FileStream fsPath = new FileStream(path, FileMode.Open, FileAccess.Read))
-                            {
-                                using (StreamReader readerPath = new StreamReader(fsPath, Encoding.UTF8))
-                                {
-                                    rBox.Text = readerPath.ReadToEnd();
-                                    break;
-                                }
-                            }
-                        }
-                    }
+                    lstBox.Items.Add(line);
                 }
             }
 

@@ -35,7 +35,9 @@ namespace CalenderForProject
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            FormCalendar formCalendar = new FormCalendar();
+            formCalendar.Show();
+            this.Close();
         }
 
         

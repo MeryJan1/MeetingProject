@@ -54,10 +54,7 @@ namespace CalenderForProject
                 string[] lines = File.ReadAllLines(filePath);
                 lstBoxPlans.Items.AddRange(lines);
             }
-            else
-            {
-                MessageBox.Show("Dosya bulunamadı!");
-            }
+            
         }
 
         private void loadDays()
@@ -106,13 +103,11 @@ namespace CalenderForProject
                 title = lstBoxPlans.SelectedItem.ToString();
                 FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
                 formCalenderInformationPlaning.Show();
+                this.Close();
             }
-               
 
-            else
-            {
-                MessageBox.Show("No item selected.");
-            }
+           
+            
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -165,6 +160,7 @@ namespace CalenderForProject
         {
             FormTitle formTitle = new FormTitle();
             formTitle.Show();
+            this.Close();
         }
 
        
