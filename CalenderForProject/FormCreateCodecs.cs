@@ -13,39 +13,49 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+using static CalenderForProject.Form1;
 
-
-[Serializable]
-public class ExampleDTO
-{
-    public byte[] FileData { get; set; }
-    public string FileName { get; set; }
-    public string Message { get; set; }
-    public object Status { get; internal set; }
-}
 
 namespace CalenderForProject
 {
     public partial class FormCreateCodecs : Form
 
     {
+        [Serializable]
+        public class ExampleDTO
+        {
+            public byte[] FileData { get; set; }
+            public string FileName { get; set; }
+            public string Message { get; set; }
+        }
+
         public FormCreateCodecs()
         {
             InitializeComponent();
 
-            //********************************CLİENT********
+           
+            
+        }
 
+
+        //********************************CLİENT********
+
+        public void clienter()
+        {
             int port = 5555;
             Console.WriteLine(string.Format("Client Başlatıldı. Port: {0}", port));
             Console.WriteLine("-----------------------------");
 
-            ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127 .0.0.1"), port));
+            ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127.0.0.1"), port));
             exampleSocket.Start();
 
             // File PATH
-            string folderPath = @"C:\Users\lenovo\Documents\create";
-            string zipFilePath = @"C:\Users\lenovo\Documents\create.zip";
-
+            string folderPath = $"{userProfilePath}\\Documents\\create";
+            string zipFilePath = $"{userProfilePath}\\Documents\\Create.zip";
+            if (File.Exists(zipFilePath))
+            {
+                File.Delete(zipFilePath);
+            }
             // Klasörü zip dosyası olarak sıkıştır
             ZipFile.CreateFromDirectory(folderPath, zipFilePath);
 
@@ -60,7 +70,7 @@ namespace CalenderForProject
 
             Console.ReadLine();
         }
-        
+
         public class ExampleSocket
         {
             #region Variables
@@ -92,15 +102,12 @@ namespace CalenderForProject
 
             public void SendData(ExampleDTO exampleDTO)
             {
-
-
                 using (MemoryStream ms = new MemoryStream())
-                using (BinaryWriter writer = new BinaryWriter(ms))
                 {
-                    // Serialize the ExampleDTO object
+                    // Use BinaryFormatter to serialize the ExampleDTO object
                     new BinaryFormatter().Serialize(ms, exampleDTO);
 
-                    // Get the byte array from MemoryStream
+                    // Get the serialized data as a byte array
                     byte[] serializedData = ms.ToArray();
 
                     // Send the length of the serialized data first
@@ -109,12 +116,46 @@ namespace CalenderForProject
 
                     // Send the serialized data in chunks
                     int chunkSize = 1024;
-                    for (int i = 0; i < serializedData.Length; i += chunkSize)
+                    int offset = 0;
+
+                    while (offset < serializedData.Length)
                     {
-                        int remainingBytes = Math.Min(chunkSize, serializedData.Length - i);
-                        _Socket.Send(serializedData, i, remainingBytes, SocketFlags.None);
+                        int remainingBytes = Math.Min(chunkSize, serializedData.Length - offset);
+
+                        // Use ArraySegment to get a portion of the byte array
+                        ArraySegment<byte> segment = new ArraySegment<byte>(serializedData, offset, remainingBytes);
+
+                        // Send the segment of data
+                        _Socket.Send(segment.Array, segment.Offset, segment.Count, SocketFlags.None);
+
+                        // Move the offset to the next portion of data
+                        offset += remainingBytes;
                     }
                 }
+
+
+                ////bu kısım örnek için kalmıştı kodun parçası değil
+                /*   using (MemoryStream ms = new MemoryStream())
+                   using (BinaryWriter writer = new BinaryWriter(ms))
+                   {
+                       // Serialize the ExampleDTO object
+                       new BinaryFormatter().Serialize(ms, exampleDTO);
+
+                       // Get the byte array from MemoryStream
+                       byte[] serializedData = ms.ToArray();
+
+                       // Send the length of the serialized data first
+                       byte[] lengthBytes = BitConverter.GetBytes(serializedData.Length);
+                       _Socket.Send(lengthBytes);
+
+                       // Send the serialized data in chunks
+                       int chunkSize = 1024;
+                       for (int i = 0; i < serializedData.Length; i += chunkSize)
+                       {
+                           int remainingBytes = Math.Min(chunkSize, serializedData.Length - i);
+                           _Socket.Send(serializedData, i, remainingBytes, SocketFlags.None);
+                       }
+                   }*/
                 ////bu kısım örnek için kalmıştı kodun parçası değil
                 /*   using (var ms = new MemoryStream())
                    {
@@ -179,13 +220,15 @@ namespace CalenderForProject
             }
             #endregion
         }
-        //*******************************************************
+        
         static string GetLocalIPAddress()
         {
             string localIP = Dns.GetHostEntry(Dns.GetHostName()).AddressList.Where(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).FirstOrDefault().ToString();
 
             return localIP;
         }
+
+        //*******************************************************
 
         private void FormCreateCodecs_Load(object sender, EventArgs e)
         {
@@ -204,6 +247,7 @@ namespace CalenderForProject
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            clienter();
             FormCalendar formCalendar = new FormCalendar();
             formCalendar.Show();
             this.Hide();

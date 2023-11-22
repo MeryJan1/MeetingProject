@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using static CalenderForProject.Form1;
 using static CalenderForProject.FormLogin;
 namespace CalenderForProject
 {
@@ -45,7 +46,7 @@ namespace CalenderForProject
 
         private void loadTxtBox()
         {
-            string filePath = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\başlık.txt";
+            string filePath = $"{userProfilePath}\\Documents\\create\\{userNameSurname}\\başlık.txt";
 
             // Dosya var mı kontrolü
             if (File.Exists(filePath))

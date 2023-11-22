@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static CalenderForProject.FormLogin;
 using static CalenderForProject.FormCalendar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static CalenderForProject.Form1;
 
 namespace CalenderForProject
 {
@@ -35,7 +36,7 @@ namespace CalenderForProject
             int kodUzunlugu = 10;
             rastgeleKod = GenerateRandomCode(kodUzunlugu);
             //Başlık isminde bir dosya oluştu            
-            string targetDirectory = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{TitleMeet}";
+            string targetDirectory = $"{userProfilePath}\\Documents\\create\\{userNameSurname}\\{TitleMeet}";
             Directory.CreateDirectory(targetDirectory);
 
             //Description.txt oluştu ve içine DescriptionMeet yazıldı.
@@ -65,7 +66,7 @@ namespace CalenderForProject
                 }
             }
 
-            string path = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\başlık.txt";
+            string path = $"{userProfilePath}\\Documents\\create\\{userNameSurname}\\başlık.txt";
             using (StreamWriter writer = new StreamWriter(path))
             {
                     writer.WriteLine(TitleMeet);
@@ -88,7 +89,7 @@ namespace CalenderForProject
         {
             foreach (string fileName in fileNames)
             {
-                string directoryPath = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{TitleMeet}\\Dates";
+                string directoryPath = $"{userProfilePath}\\Documents\\create\\{userNameSurname}\\{TitleMeet}\\Dates";
                 Directory.CreateDirectory(directoryPath);
                 string filePath = Path.Combine(directoryPath, $"{fileName}.txt");
                 File.Create(filePath).Close();
@@ -108,7 +109,7 @@ namespace CalenderForProject
                 int index = random.Next(chars.Length);
                 randomCode.Append(chars[index]);
             }
-            string filePath = $"C:\\Users\\lenovo\\Documents\\create\\code.txt";
+            string filePath = $"{userProfilePath}\\Documents\\create\\code.txt";
             using (StreamWriter writer = File.AppendText(filePath))
             {
                 writer.WriteLine(randomCode);
@@ -116,14 +117,14 @@ namespace CalenderForProject
 
 
 
-            string Path = $"C:\\Users\\lenovo\\Documents\\create\\Dictionary\\KullanıcıAdı.txt";
+            string Path = $"{userProfilePath}\\Documents\\create\\Dictionary\\KullanıcıAdı.txt";
             using (StreamWriter writer = File.AppendText(Path))
             {
                 writer.WriteLine(randomCode+"*"+userNameSurname);
             }
 
 
-            string path = $"C:\\Users\\lenovo\\Documents\\create\\Dictionary\\başlık.txt";
+            string path = $"{userProfilePath}\\Documents\\create\\Dictionary\\başlık.txt";
             using (StreamWriter writer = File.AppendText(path))
             {
                 writer.WriteLine(randomCode + "*" + TitleMeet);

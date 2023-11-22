@@ -20,6 +20,7 @@ C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormCalendar.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormCalenderInformationPlaning.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormCalenderJoinedWithCode.resources
+C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormCreateCodecs.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormJoinwithCode.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormTitle.resources
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.FormLogin.resources
@@ -32,4 +33,3 @@ C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.csproj.CoreCompileInputs.cache
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.exe
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.pdb
-C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\ExampleDTO.resources

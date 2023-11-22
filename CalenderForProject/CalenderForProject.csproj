@@ -60,7 +60,9 @@
     <Compile Include="FormCalenderJoinedWithCode.Designer.cs">
       <DependentUpon>FormCalenderJoinedWithCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCreateCodecs.cs" />
+    <Compile Include="FormCreateCodecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCreateCodecs.Designer.cs">
       <DependentUpon>FormCreateCodecs.cs</DependentUpon>
     </Compile>

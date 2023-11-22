@@ -4,34 +4,35 @@ using System.Net.Sockets;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using ExampleDataTransferObjects;
+//using ExampleDataTransferObjects;
 using System.IO.Compression;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 
-
+/*
 namespace ExampleDataTransferObjects
 {
     /// <summary>
     /// Serialize edebilmek için Serializable attributü ile işaretliyoruz.
     /// </summary>
-    [Serializable]
+   [Serializable]
     public class ExampleDTO
     {
-        public string Status { get; internal set; }
+    
         public byte[] FileData { get; set; }
         public string FileName { get; set; }
         public string Message { get; set; }
     }
 }
-
+*/
 namespace CalenderForProject
 {
     internal static class Program
     {
+        /*
         public delegate void OnExampleDTOReceived(ExampleDTO eDTO);
-
+        public static string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         public class Client
         {
             public OnExampleDTOReceived _OnExampleDTOReceived;
@@ -106,7 +107,7 @@ namespace CalenderForProject
                 try
                 {
 
-                    string extractPath = @"C:\Users\lenovo\Documents";
+                    string extractPath = $"{userProfile}\\Documents\\Documents";
 
 
                     // Sunucuda alınan dosyayı kaydetmek için bir yol belirleyin
@@ -160,19 +161,17 @@ namespace CalenderForProject
 
             void OnExampleDTOReceived(ExampleDTO exampleDTO)
             {
-                Console.WriteLine($"Status: {exampleDTO.Status}");
-                Console.WriteLine($"Message: {exampleDTO.Message}");
 
                 // Örnek bir dosya yolu, kendi dosya yolunuzu belirtin
-                string filePath = $"C:\\Users\\lenovo\\Documents\\{exampleDTO.FileName}";
+                string filePath = $"{userProfile}\\Documents\\{exampleDTO.FileName}";
                 File.WriteAllBytes(filePath, exampleDTO.FileData);
 
                 Console.WriteLine($"File received and saved at: {filePath}");
             }
         }
-
-        /***************************************************************************/
-
+        */
+        
+   
 
 
         /// <summary>
@@ -181,7 +180,7 @@ namespace CalenderForProject
         [STAThread]
         static void Main(string[] args)
         {
-            //server
+           /* //server
             int port = 5555;
             Console.WriteLine($"Server Başlatıldı. Port: {port}");
             Console.WriteLine("-----------------------------");
@@ -190,7 +189,7 @@ namespace CalenderForProject
             listener.Start();
 
             Console.ReadLine();
-
+           */
             //**************
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

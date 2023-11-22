@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using static CalenderForProject.FormLogin;
 using static CalenderForProject.FormCalendar;
 using System.Globalization;
-
+using static CalenderForProject.Form1;
 
 namespace CalenderForProject
 {
@@ -35,8 +35,8 @@ namespace CalenderForProject
         private void loadTxtBox()
         {
             
-            string filePath = Path.Combine("C:\\Users\\lenovo\\Documents\\create", FormLogin.userNameSurname, FormCalendar.title, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
-            string file = Path.Combine("C:\\Users\\lenovo\\Documents\\create", FormLogin.userNameSurname , FormCalendar.title, "Description.txt");
+            string filePath = Path.Combine(userProfilePath,"Documents\\create", FormLogin.userNameSurname, FormCalendar.title, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
+            string file = Path.Combine(userProfilePath,"Documents\\create", FormLogin.userNameSurname , FormCalendar.title, "Description.txt");
             txtBoxTitle.Text = FormCalendar.title;
             if (File.Exists(file))
             {

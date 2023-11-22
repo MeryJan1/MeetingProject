@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using static CalenderForProject.FormCalenderJoinedWithCode;
+using static CalenderForProject.Form1;
 using static CalenderForProject.FormJoinwithCode;
 using System.IO.Compression;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+
 
 namespace CalenderForProject
 {
@@ -37,8 +38,8 @@ namespace CalenderForProject
 
         private void loadBox()
         {
-            string filePath = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
-            string file = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Description.txt";
+            string filePath = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
+            string file = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Description.txt";
             txtBoxTitle.Text = FormCalendar.title;
             if (File.Exists(file))
             {
@@ -150,8 +151,8 @@ namespace CalenderForProject
             client();
             // tarihlistesinde bulunan stringler TümTarihler.txt klasında da bulunuyorsa o stringdeğişkeni.txt dosyasına gidip KullanıcıAdı stringini yazdıran kod.
             
-            string tümTarihler = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
-            string tümKullanıcılarDosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";
+            string tümTarihler = $"{userProfilePath} \\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
+            string tümKullanıcılarDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";
 
             // Tüm tarihleri oku
             string[] tarihler = File.ReadAllLines(tümTarihler);
@@ -161,7 +162,7 @@ namespace CalenderForProject
                 // TarihListesi içindeki tarihleri kontrol et
                 if (Tarihlistesi.Contains(tarih))
                 {
-                    string tarihDosyaYolu = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
+                    string tarihDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
 
                     // Dosya varsa ve daha önce bu kullanıcı eklenmemişse
                     if (File.Exists(tarihDosyaYolu) && !File.ReadAllText(tarihDosyaYolu).Contains(İsim))
@@ -204,16 +205,16 @@ namespace CalenderForProject
         private void client()
         {
 
-            int port = 5555;
+            int port = 0;
             Console.WriteLine(string.Format("Client Başlatıldı. Port: {0}", port));
             Console.WriteLine("-----------------------------");
 
-            ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127 .0.0.1"), port));
+            ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127.0.0.1"), port));
             exampleSocket.Start();
 
             // File PATH
-            string folderPath = @"C:\Path\To\Your\Folder";
-            string zipFilePath = @"C:\Path\To\Your\Folder.zip";
+            string folderPath = $"{userProfilePath}\\Documents\\create";
+            string zipFilePath = $"{userProfilePath}\\Documents\\create.zip";
 
             // Klasörü zip dosyası olarak sıkıştır
             ZipFile.CreateFromDirectory(folderPath, zipFilePath);

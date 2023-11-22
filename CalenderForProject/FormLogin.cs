@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using static CalenderForProject.Form1;
 
 
 
@@ -38,7 +39,7 @@ namespace CalenderForProject
             string modifiedText = userNameSurname.Replace(" ", "_");
             userNameSurname = modifiedText;
 
-            string filePath = "C:\\Users\\lenovo\\Documents\\create\\isim.txt";
+            string filePath = $"{userProfilePath}\\Documents\\create\\isim.txt";
             if (File.Exists(filePath))
             {
                 // Dosya içeriğini okuyun
@@ -48,7 +49,7 @@ namespace CalenderForProject
                 if (!fileContent.Contains(userNameSurname))
                 {
                     // create/userNameSurname dizinini oluşturun
-                    string directoryPath = Path.Combine("C:\\Users\\lenovo\\Documents\\create", userNameSurname);
+                    string directoryPath = Path.Combine(userProfilePath, "\\Documents\\create", userNameSurname);
                     Directory.CreateDirectory(directoryPath);
 
                     string newFilePath = Path.Combine(directoryPath, "başlık.txt");
