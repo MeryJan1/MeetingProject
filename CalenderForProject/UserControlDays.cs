@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using static CalenderForProject.FormCalendar;
 
@@ -14,7 +15,10 @@ namespace CalenderForProject
             InitializeComponent();
         }
 
-        
+        public void ChangeBackgroundColor(Color newColor)
+        {
+            this.BackColor = newColor;
+        }
 
         public void days(int numdays)
         {
@@ -31,13 +35,14 @@ namespace CalenderForProject
             string date = static_day + "." + static_month + "." + static_year;
             if (!TarihListesi.Contains(date))
             {
-                TarihListesi.Add(date);
-                label1.Text = "Selected";
+                TarihListesi.Add(date); 
+                ChangeBackgroundColor(Color.LightGreen);
+                
             }
             else
             {
                 TarihListesi.Remove(date);
-                label1.Text = "";
+                ChangeBackgroundColor(Color.LightSteelBlue);
             }
         }
 

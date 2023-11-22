@@ -17,8 +17,7 @@ namespace CalenderForProject
 {
     public partial class UserControlDaysJoinWithCode : UserControl
     {
-        public static string Date;
-
+        
         public UserControlDaysJoinWithCode()
         {
             InitializeComponent();
@@ -40,7 +39,8 @@ namespace CalenderForProject
 
             if (tarihler.Contains(tarih))
             {
-                ChangeBackgroundColor(Color.PeachPuff);
+                ChangeBackgroundColor(Color.LightGreen);
+                lstBox.BackColor = Color.LightGreen;
                 string[] lines = File.ReadAllLines(path);
                 lstBox.Items.Clear();
                 // Her bir satırı ListBox'a ekle
@@ -64,34 +64,39 @@ namespace CalenderForProject
             string date = FormCalenderJoinedWithCode.Static_Day + "." + FormCalenderJoinedWithCode.Static_Month + "." + FormCalenderJoinedWithCode.Static_Year;
             if (!Tarihlistesi.Contains(date))
             {
+                ChangeBackgroundColor(Color.LightGreen);
+                lstBox.BackColor = Color.LightGreen;
                 Tarihlistesi.Add(date);
-                label1.Text = "Selected";
             }
             else
             {
                 Tarihlistesi.Remove(date);
-                label1.Text = "";
+                ChangeBackgroundColor(Color.Orange);
+                lstBox.BackColor = Color.Orange;
             }
 
 
 
         }
 
-        private void lbdays_Click(object sender, EventArgs e)
+
+        private void lstBox_Click(object sender, EventArgs e)
         {
             FormCalenderJoinedWithCode.Static_Day = lbdays.Text;
-            // Tıklanan tarihi bir olay ile ana forma iletiyoruz
             string date = FormCalenderJoinedWithCode.Static_Day + "." + FormCalenderJoinedWithCode.Static_Month + "." + FormCalenderJoinedWithCode.Static_Year;
             if (!Tarihlistesi.Contains(date))
             {
+                ChangeBackgroundColor(Color.LightGreen);
+                lstBox.BackColor = Color.LightGreen;
                 Tarihlistesi.Add(date);
-                label1.Text = "Selected";
             }
             else
             {
                 Tarihlistesi.Remove(date);
-                label1.Text = "";
+                ChangeBackgroundColor(Color.Orange);
+                lstBox.BackColor = Color.Orange;
             }
+
         }
 
         private void UserControlDaysJoinWithCode_Load(object sender, EventArgs e)

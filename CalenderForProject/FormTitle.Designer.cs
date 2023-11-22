@@ -38,6 +38,7 @@
             // 
             // txtBoxTitleMeet
             // 
+            this.txtBoxTitleMeet.BackColor = System.Drawing.Color.MistyRose;
             this.txtBoxTitleMeet.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxTitleMeet.Location = new System.Drawing.Point(142, 143);
             this.txtBoxTitleMeet.Name = "txtBoxTitleMeet";
@@ -46,6 +47,7 @@
             // 
             // richBoxDescribtion
             // 
+            this.richBoxDescribtion.BackColor = System.Drawing.Color.MistyRose;
             this.richBoxDescribtion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richBoxDescribtion.Location = new System.Drawing.Point(143, 213);
             this.richBoxDescribtion.Name = "richBoxDescribtion";
@@ -85,19 +87,21 @@
             // 
             // buttonSaveMeet
             // 
+            this.buttonSaveMeet.BackColor = System.Drawing.Color.Salmon;
             this.buttonSaveMeet.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveMeet.Location = new System.Drawing.Point(450, 398);
+            this.buttonSaveMeet.Location = new System.Drawing.Point(434, 399);
             this.buttonSaveMeet.Name = "buttonSaveMeet";
-            this.buttonSaveMeet.Size = new System.Drawing.Size(105, 29);
+            this.buttonSaveMeet.Size = new System.Drawing.Size(122, 37);
             this.buttonSaveMeet.TabIndex = 5;
             this.buttonSaveMeet.Text = "Save";
-            this.buttonSaveMeet.UseVisualStyleBackColor = true;
+            this.buttonSaveMeet.UseVisualStyleBackColor = false;
             this.buttonSaveMeet.Click += new System.EventHandler(this.buttonSaveMeet_Click);
             // 
             // FormTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(703, 467);
             this.Controls.Add(this.buttonSaveMeet);
             this.Controls.Add(this.label3);

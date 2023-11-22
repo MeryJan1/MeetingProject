@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using System;
 using System.IO;
 using System.Net;
@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
 using System.IO.Compression;
 using System.Text;
-
+/*
 namespace CalenderForProject
 {
     internal class Client
@@ -51,7 +51,7 @@ namespace CalenderForProject
 
             public void SendData(ExampleDTO exampleDTO)
             {
-               
+
 
                 using (MemoryStream ms = new MemoryStream())
                 using (BinaryWriter writer = new BinaryWriter(ms))
@@ -74,7 +74,7 @@ namespace CalenderForProject
                         _Socket.Send(serializedData, i, remainingBytes, SocketFlags.None);
                     }
                 }
-////bu kısım örnek için kalmıştı kodun parçası değil
+                ////bu kısım örnek için kalmıştı kodun parçası değil
                 /*   using (var ms = new MemoryStream())
                    {
                        // İlgili object'imizi binary'e serialize ediyoruz.
@@ -99,8 +99,8 @@ namespace CalenderForProject
                        if (socketError != SocketError.Success)
                            Console.WriteLine("Server bağlantısı koptu!");
                    }*/
-/*
-            }
+
+  /*          }
             #endregion
 
             #region Private Methods

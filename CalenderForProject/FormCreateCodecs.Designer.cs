@@ -47,7 +47,7 @@
             // tBoxCode
             // 
             this.tBoxCode.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tBoxCode.Location = new System.Drawing.Point(135, 174);
+            this.tBoxCode.Location = new System.Drawing.Point(135, 179);
             this.tBoxCode.Name = "tBoxCode";
             this.tBoxCode.ReadOnly = true;
             this.tBoxCode.Size = new System.Drawing.Size(452, 29);
@@ -55,30 +55,33 @@
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.LightGreen;
             this.btnOK.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOK.Location = new System.Drawing.Point(500, 249);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(109, 37);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCopy
             // 
+            this.btnCopy.BackColor = System.Drawing.Color.Turquoise;
             this.btnCopy.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCopy.Location = new System.Drawing.Point(360, 244);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(123, 46);
             this.btnCopy.TabIndex = 3;
             this.btnCopy.Text = "COPY CODE";
-            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.UseVisualStyleBackColor = false;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // FormCreateCodecs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(685, 396);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnOK);

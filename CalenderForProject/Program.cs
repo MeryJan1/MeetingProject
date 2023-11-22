@@ -19,7 +19,7 @@ namespace ExampleDataTransferObjects
     [Serializable]
     public class ExampleDTO
     {
-        public string Status { get; set; }
+        public string Status { get; internal set; }
         public byte[] FileData { get; set; }
         public string FileName { get; set; }
         public string Message { get; set; }
@@ -106,18 +106,17 @@ namespace CalenderForProject
                 try
                 {
 
-                    string extractPath = @"C:\Path\To\Your\ExtractedFolder";
+                    string extractPath = @"C:\Users\lenovo\Documents";
 
 
                     // Sunucuda alınan dosyayı kaydetmek için bir yol belirleyin
-                    string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
+                    string filePath = Path.Combine(extractPath, fileName);
 
                     // Dosyayı kaydedin
-                    System.IO.File.WriteAllBytes(filePath, fileData);
+                    File.WriteAllBytes(filePath, fileData);
 
                     // dosyayı extractPath içine zipten çıkarıyor.
                     ZipFile.ExtractToDirectory(filePath, extractPath);
-
 
 
                     Console.WriteLine($"File received and saved at: {extractPath}");
@@ -165,7 +164,7 @@ namespace CalenderForProject
                 Console.WriteLine($"Message: {exampleDTO.Message}");
 
                 // Örnek bir dosya yolu, kendi dosya yolunuzu belirtin
-                string filePath = $"received_{exampleDTO.FileName}";
+                string filePath = $"C:\\Users\\lenovo\\Documents\\{exampleDTO.FileName}";
                 File.WriteAllBytes(filePath, exampleDTO.FileData);
 
                 Console.WriteLine($"File received and saved at: {filePath}");

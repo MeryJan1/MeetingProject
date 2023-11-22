@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.lbdays = new System.Windows.Forms.Label();
+            this.lBox = new System.Windows.Forms.ListBox();
             this.lstBox = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbdays
@@ -42,23 +44,46 @@
             this.lbdays.TabIndex = 9;
             this.lbdays.Text = "00";
             // 
+            // lBox
+            // 
+            this.lBox.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lBox.FormattingEnabled = true;
+            this.lBox.ItemHeight = 18;
+            this.lBox.Location = new System.Drawing.Point(42, 24);
+            this.lBox.Name = "lBox";
+            this.lBox.Size = new System.Drawing.Size(120, 76);
+            this.lBox.TabIndex = 11;
+            // 
             // lstBox
             // 
-            this.lstBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lstBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lstBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstBox.FormattingEnabled = true;
             this.lstBox.ItemHeight = 18;
-            this.lstBox.Location = new System.Drawing.Point(42, 24);
+            this.lstBox.Location = new System.Drawing.Point(35, 24);
             this.lstBox.Name = "lstBox";
             this.lstBox.Size = new System.Drawing.Size(120, 76);
-            this.lstBox.TabIndex = 11;
+            this.lstBox.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(8, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 24);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "00";
             // 
             // UserControlInformationPlaning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.Controls.Add(this.lstBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lBox);
             this.Controls.Add(this.lbdays);
             this.Name = "UserControlInformationPlaning";
             this.Size = new System.Drawing.Size(162, 100);
@@ -70,6 +95,8 @@
 
         #endregion
         public System.Windows.Forms.Label lbdays;
+        private System.Windows.Forms.ListBox lBox;
         private System.Windows.Forms.ListBox lstBox;
+        public System.Windows.Forms.Label label2;
     }
 }

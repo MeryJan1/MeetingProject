@@ -60,9 +60,7 @@
     <Compile Include="FormCalenderJoinedWithCode.Designer.cs">
       <DependentUpon>FormCalenderJoinedWithCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCreateCodecs.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormCreateCodecs.cs" />
     <Compile Include="FormCreateCodecs.Designer.cs">
       <DependentUpon>FormCreateCodecs.cs</DependentUpon>
     </Compile>
@@ -181,21 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\indir %282%29.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\indir.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Wallpaper images_ 4K, HD, Full HD, Dual Screen.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Das.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Simplistic Green Fern Leaf Wallpaper - 120W x 75H inches _ Peel &amp; Stick Paper.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

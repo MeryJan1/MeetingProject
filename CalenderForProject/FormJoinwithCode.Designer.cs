@@ -58,13 +58,14 @@
             // 
             // BtnLogin
             // 
+            this.BtnLogin.BackColor = System.Drawing.Color.Turquoise;
             this.BtnLogin.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnLogin.Location = new System.Drawing.Point(445, 310);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(113, 32);
             this.BtnLogin.TabIndex = 7;
             this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_ClickAsync);
             // 
             // txtName
@@ -97,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtBoxCode);
             this.Controls.Add(this.label1);

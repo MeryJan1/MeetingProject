@@ -34,7 +34,6 @@
             this.lstBoxPlans = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.richBoxDescription = new System.Windows.Forms.RichTextBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.LBDATE = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,9 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonOkey = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
             this.gBoxTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             // 
             // gBoxTitle
             // 
+            this.gBoxTitle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.gBoxTitle.Controls.Add(this.txtBoxTitle);
             this.gBoxTitle.Controls.Add(this.lstBoxPlans);
             this.gBoxTitle.Controls.Add(this.label10);
@@ -69,21 +70,23 @@
             this.gBoxTitle.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gBoxTitle.Location = new System.Drawing.Point(1248, 198);
             this.gBoxTitle.Name = "gBoxTitle";
-            this.gBoxTitle.Size = new System.Drawing.Size(348, 545);
+            this.gBoxTitle.Size = new System.Drawing.Size(348, 495);
             this.gBoxTitle.TabIndex = 62;
             this.gBoxTitle.TabStop = false;
             this.gBoxTitle.Text = "Title :";
             // 
             // txtBoxTitle
             // 
+            this.txtBoxTitle.BackColor = System.Drawing.Color.MistyRose;
             this.txtBoxTitle.Enabled = false;
-            this.txtBoxTitle.Location = new System.Drawing.Point(0, 35);
+            this.txtBoxTitle.Location = new System.Drawing.Point(6, 35);
             this.txtBoxTitle.Name = "txtBoxTitle";
-            this.txtBoxTitle.Size = new System.Drawing.Size(342, 36);
+            this.txtBoxTitle.Size = new System.Drawing.Size(336, 36);
             this.txtBoxTitle.TabIndex = 65;
             // 
             // lstBoxPlans
             // 
+            this.lstBoxPlans.BackColor = System.Drawing.Color.MistyRose;
             this.lstBoxPlans.Enabled = false;
             this.lstBoxPlans.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstBoxPlans.FormattingEnabled = true;
@@ -106,6 +109,7 @@
             // 
             // richBoxDescription
             // 
+            this.richBoxDescription.BackColor = System.Drawing.Color.MistyRose;
             this.richBoxDescription.Enabled = false;
             this.richBoxDescription.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richBoxDescription.Location = new System.Drawing.Point(3, 102);
@@ -113,17 +117,6 @@
             this.richBoxDescription.Size = new System.Drawing.Size(348, 172);
             this.richBoxDescription.TabIndex = 1;
             this.richBoxDescription.Text = "";
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBack.Location = new System.Drawing.Point(94, 797);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(137, 37);
-            this.btnBack.TabIndex = 60;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // LBDATE
             // 
@@ -205,42 +198,62 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Sunday";
             // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPrevious.Location = new System.Drawing.Point(1029, 802);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(111, 32);
-            this.btnPrevious.TabIndex = 51;
-            this.btnPrevious.Text = "Previous";
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnNext.Location = new System.Drawing.Point(1146, 802);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(111, 32);
-            this.btnNext.TabIndex = 50;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // daycontainer
             // 
+            this.daycontainer.BackColor = System.Drawing.Color.RosyBrown;
             this.daycontainer.Location = new System.Drawing.Point(29, 148);
             this.daycontainer.Name = "daycontainer";
             this.daycontainer.Size = new System.Drawing.Size(1182, 629);
             this.daycontainer.TabIndex = 49;
             // 
+            // buttonOkey
+            // 
+            this.buttonOkey.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonOkey.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonOkey.Location = new System.Drawing.Point(55, 783);
+            this.buttonOkey.Name = "buttonOkey";
+            this.buttonOkey.Size = new System.Drawing.Size(162, 59);
+            this.buttonOkey.TabIndex = 65;
+            this.buttonOkey.Text = "Back";
+            this.buttonOkey.UseVisualStyleBackColor = false;
+            this.buttonOkey.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPrevious.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPrevious.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPrevious.Location = new System.Drawing.Point(992, 794);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(118, 40);
+            this.btnPrevious.TabIndex = 64;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnNext.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNext.Location = new System.Drawing.Point(1116, 794);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(118, 40);
+            this.btnNext.TabIndex = 63;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // FormCalenderInformationPlaning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1624, 866);
+            this.Controls.Add(this.buttonOkey);
+            this.Controls.Add(this.btnPrevious);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.gBoxTitle);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.LBDATE);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
@@ -249,8 +262,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.daycontainer);
             this.Name = "FormCalenderInformationPlaning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -267,7 +278,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox gBoxTitle;
         private System.Windows.Forms.RichTextBox richBoxDescription;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label LBDATE;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
@@ -276,11 +286,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.FlowLayoutPanel daycontainer;
         private System.Windows.Forms.ListBox lstBoxPlans;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtBoxTitle;
+        private System.Windows.Forms.Button buttonOkey;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
     }
 }

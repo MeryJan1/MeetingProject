@@ -52,11 +52,10 @@
             this.lbdays.Size = new System.Drawing.Size(30, 24);
             this.lbdays.TabIndex = 2;
             this.lbdays.Text = "00";
-            this.lbdays.Click += new System.EventHandler(this.lbdays_Click);
             // 
             // lstBox
             // 
-            this.lstBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lstBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lstBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstBox.FormattingEnabled = true;
             this.lstBox.ItemHeight = 18;
@@ -64,12 +63,13 @@
             this.lstBox.Name = "lstBox";
             this.lstBox.Size = new System.Drawing.Size(120, 76);
             this.lstBox.TabIndex = 4;
+            this.lstBox.Click += new System.EventHandler(this.lstBox_Click);
             // 
             // UserControlDaysJoinWithCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.Controls.Add(this.lstBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbdays);

@@ -45,13 +45,14 @@
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnLogin.Location = new System.Drawing.Point(366, 259);
+            this.BtnLogin.BackColor = System.Drawing.Color.LightGreen;
+            this.BtnLogin.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnLogin.Location = new System.Drawing.Point(366, 248);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(113, 32);
+            this.BtnLogin.Size = new System.Drawing.Size(113, 38);
             this.BtnLogin.TabIndex = 2;
             this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_ClickAsync);
             // 
             // label2
@@ -78,6 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(645, 385);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
