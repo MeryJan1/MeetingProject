@@ -63,7 +63,7 @@
             this.lstBox.Name = "lstBox";
             this.lstBox.Size = new System.Drawing.Size(120, 76);
             this.lstBox.TabIndex = 4;
-            this.lstBox.Click += new System.EventHandler(this.lstBox_Click);
+            this.lstBox.Click += new System.EventHandler(this.UserControlDaysJoinWithCode_Click);
             // 
             // UserControlDaysJoinWithCode
             // 

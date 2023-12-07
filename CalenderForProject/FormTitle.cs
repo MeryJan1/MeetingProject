@@ -67,15 +67,19 @@ namespace CalenderForProject
             }
 
             string path = $"{userProfilePath}\\Documents\\create\\{userNameSurname}\\başlık.txt";
-            using (StreamWriter writer = new StreamWriter(path))
+
+            if (File.Exists(path))
             {
-                    writer.WriteLine(TitleMeet);
+                string existingContent = File.ReadAllText(path);
                 
+                // Mevcut içeriği ve TitleMeet değerini kullanarak yeni içeriği oluştur
+                string newContent = existingContent + Environment.NewLine + TitleMeet;
+
+                // Dosyayı güncelle
+                File.WriteAllText(path, newContent);
             }
 
             CreateTxtFiles(TarihListesi);
-
-
 
             ////////////////////////////////////
             FormCreateCodecs formCreateCodecs = new FormCreateCodecs();  

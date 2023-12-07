@@ -17,7 +17,7 @@ namespace CalenderForProject
     public partial class FormCalenderInformationPlaning : Form
     {
 
-        public static string static_day, static_month, static_year;
+        public static string static_day, static_month, static_year, description;
         int year, month;
 
         public FormCalenderInformationPlaning()
@@ -38,13 +38,33 @@ namespace CalenderForProject
             string filePath = Path.Combine(userProfilePath,"Documents\\create", FormLogin.userNameSurname, FormCalendar.title, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
             string file = Path.Combine(userProfilePath,"Documents\\create", FormLogin.userNameSurname , FormCalendar.title, "Description.txt");
             txtBoxTitle.Text = FormCalendar.title;
+            string path = $"{userProfilePath}\\Documents\\create\\Dictionary\\Başlık.txt";
+            Dictionary<string, string> DicCode = new Dictionary<string, string>();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    // Satırı yıldıza göre ayır ve key, value olarak kullan
+                    string[] parts = line.Split('*');
+                    if (parts.Length == 2)
+                    {
+                        string value = parts[0];
+                        string key = parts[1];
+
+                        // Dictionary'e ekle
+                        DicCode[key] = value;
+                    }
+                }
+            }
+
+            txtBoxCode.Text = DicCode[FormCalendar.title];
+
             if (File.Exists(file))
             {
                 // Dosyadan içeriği oku
-                string content = File.ReadAllText(file);
-
-                // RichTextBox'a yaz description burada gözükecek
-                richBoxDescription.Text = content;
+                description = File.ReadAllText(file);
+                richBoxDescription.Text = description;
             }
             else
             {
@@ -68,8 +88,16 @@ namespace CalenderForProject
 
             this.Close();
         }
-            
-            
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBoxCode.Text);
+            MessageBox.Show("The text has been copied to the clipboard.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
+
 
         // for calendar
 

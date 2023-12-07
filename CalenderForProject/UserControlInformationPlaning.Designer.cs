@@ -88,6 +88,7 @@
             this.Name = "UserControlInformationPlaning";
             this.Size = new System.Drawing.Size(162, 100);
             this.Load += new System.EventHandler(this.UserControlInformationPlaning_Load);
+            this.Click += new System.EventHandler(this.UserControlInformationPlaning_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

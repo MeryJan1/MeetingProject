@@ -99,21 +99,19 @@ namespace CalenderForProject
 
         private void lstBoxPlans_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lstBoxPlans.SelectedItems != null && lstBoxPlans.SelectedIndex != -1)
+            if(lstBoxPlans.SelectedItem != null && lstBoxPlans.SelectedIndex != -1 && lstBoxPlans.SelectedItem != "")
             {
                 title = lstBoxPlans.SelectedItem.ToString();
                 FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
                 formCalenderInformationPlaning.Show();
+                MessageBox.Show("Click on the day you decided on and enter the necessary information.");
                 this.Close();
             }
 
-           
-            
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-
             string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             month--;
             // clear container

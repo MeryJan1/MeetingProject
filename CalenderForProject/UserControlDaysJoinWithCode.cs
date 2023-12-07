@@ -51,28 +51,25 @@ namespace CalenderForProject
             }
 
           
-                //Burada label üzerlerine kullanıcılar yazdırılacak.
-                //eğer TümTarihler.txt dosyasının içinde bu tarih varsa o tarihin dosyasına git aynı dizinde olmalı ve
-                //içindeki kullanıcıları tek tek labela yazdır.
 
         }
 
         private void UserControlDaysJoinWithCode_Click(object sender, EventArgs e)
         {
             FormCalenderJoinedWithCode.Static_Day = lbdays.Text;
-            // Tıklanan tarihi bir olay ile ana forma iletiyoruz
+
             string date = FormCalenderJoinedWithCode.Static_Day + "." + FormCalenderJoinedWithCode.Static_Month + "." + FormCalenderJoinedWithCode.Static_Year;
             if (!Tarihlistesi.Contains(date))
             {
-                ChangeBackgroundColor(Color.LightGreen);
-                lstBox.BackColor = Color.LightGreen;
+                ChangeBackgroundColor(Color.Orange);
+                lstBox.BackColor = Color.Orange;
                 Tarihlistesi.Add(date);
             }
             else
             {
+                ChangeBackgroundColor(Color.LightGreen);
+                lstBox.BackColor = Color.LightGreen;
                 Tarihlistesi.Remove(date);
-                ChangeBackgroundColor(Color.Orange);
-                lstBox.BackColor = Color.Orange;
             }
 
 
@@ -84,17 +81,20 @@ namespace CalenderForProject
         {
             FormCalenderJoinedWithCode.Static_Day = lbdays.Text;
             string date = FormCalenderJoinedWithCode.Static_Day + "." + FormCalenderJoinedWithCode.Static_Month + "." + FormCalenderJoinedWithCode.Static_Year;
+
             if (!Tarihlistesi.Contains(date))
             {
-                ChangeBackgroundColor(Color.LightGreen);
-                lstBox.BackColor = Color.LightGreen;
+                
+                ChangeBackgroundColor(Color.Orange);
+                lstBox.BackColor = Color.Orange;
                 Tarihlistesi.Add(date);
             }
             else
             {
+               
+                ChangeBackgroundColor(Color.LightGreen);
+                lstBox.BackColor = Color.LightGreen;
                 Tarihlistesi.Remove(date);
-                ChangeBackgroundColor(Color.Orange);
-                lstBox.BackColor = Color.Orange;
             }
 
         }

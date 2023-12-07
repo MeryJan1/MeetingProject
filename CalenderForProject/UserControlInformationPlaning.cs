@@ -37,8 +37,8 @@ namespace CalenderForProject
             string tarih = numdays + "." + FormCalenderInformationPlaning. static_month + "." + FormCalenderInformationPlaning. static_year;
             string file = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{title}\\Dates\\TümTarihler.txt"; ;
             string path = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{title}\\Dates\\{tarih}.txt";
-
             string[] tarihler = File.ReadAllLines(file);
+
             if (tarihler.Contains(tarih))
             {
                 ChangeBackColor(Color.LightGreen);
@@ -54,6 +54,18 @@ namespace CalenderForProject
         private void UserControlInformationPlaning_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserControlInformationPlaning_Click(object sender, EventArgs e)
+        {
+            FormCalenderInformationPlaning.static_day = lbdays.Text;
+
+            GoogleCalender googleCalender = new GoogleCalender();
+            googleCalender.Show();
+
+            FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
+            formCalenderInformationPlaning.Close();
+            
         }
     }
 }

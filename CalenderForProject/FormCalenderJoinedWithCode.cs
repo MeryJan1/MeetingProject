@@ -6,15 +6,22 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v3;
+using Google.Apis.Drive.v3.Data;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using static CalenderForProject.Form1;
 using static CalenderForProject.FormJoinwithCode;
 using System.IO.Compression;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+using static Google.Apis.Drive.v3.DriveService;
 
 
 namespace CalenderForProject
@@ -24,6 +31,11 @@ namespace CalenderForProject
         public static List<string> Tarihlistesi = new List<string> { };
         public static string Static_Day, Static_Month, Static_Year;
         int year, month; // for calendar
+
+        static string[] Scopes = { DriveService.Scope.Drive };
+        static string ApplicationName = $"{KullanıcıAdı}";
+        static string FilePath = $"{userProfilePath}\\Documents\\create"; // Yüklemek istediğiniz dosyanın yolu
+
 
         public FormCalenderJoinedWithCode()
         {
@@ -41,20 +53,21 @@ namespace CalenderForProject
             string filePath = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
             string file = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Description.txt";
             txtBoxTitle.Text = FormCalendar.title;
-            if (File.Exists(file))
+            if (System.IO.File.Exists(file))
             {
                 // Dosyadan içeriği oku
-                string content = File.ReadAllText(file);
+                string content = System.IO.File.ReadAllText(file);
 
                 // RichTextBox'a yaz description burada gözükecek
                 richBoxDescription.Text = content;
             }
            
             // Dosya var mı kontrolü
-            if (File.Exists(filePath))
+            if (System.IO.File.Exists(filePath))
             {
                 // Dosyadan satırları oku ve ListBox'a ekle toplantı günlerini seçenler burada gözükecek.
-                string[] lines = File.ReadAllLines(filePath);
+               ;
+                string[] lines = System.IO.File.ReadAllLines(filePath);
                 lstBoxPlans.Items.AddRange(lines);
             }
             txtBoxTitle.Text = Başlık;
@@ -148,51 +161,131 @@ namespace CalenderForProject
 
         private void buttonOkey_Click(object sender, EventArgs e)
         {
-            client();
+            /*//DRİVE İŞLEMLERİ*****************
+            UserCredential credential = GetCredential();
+
+            DriveService service = new DriveService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = ApplicationName,
+            });
+
+            string fileId = UploadFile(service, FilePath);
+
+            // Dosyayı paylaşmak için Google Drive API'yi kullanın
+            ShareFile(service, fileId);
+
+            //*************************************
+            */
+            //client();
             // tarihlistesinde bulunan stringler TümTarihler.txt klasında da bulunuyorsa o stringdeğişkeni.txt dosyasına gidip KullanıcıAdı stringini yazdıran kod.
-            
-            string tümTarihler = $"{userProfilePath} \\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
+
+            string tümTarihler = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
             string tümKullanıcılarDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";
 
+
             // Tüm tarihleri oku
-            string[] tarihler = File.ReadAllLines(tümTarihler);
 
-            foreach (string tarih in tarihler)
+            if (System.IO.File.Exists(tümTarihler) && System.IO.File.Exists(tümKullanıcılarDosyaYolu))
             {
-                // TarihListesi içindeki tarihleri kontrol et
-                if (Tarihlistesi.Contains(tarih))
+                
+                foreach (string tarih in System.IO.File.ReadAllLines(tümTarihler))
                 {
-                    string tarihDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
-
-                    // Dosya varsa ve daha önce bu kullanıcı eklenmemişse
-                    if (File.Exists(tarihDosyaYolu) && !File.ReadAllText(tarihDosyaYolu).Contains(İsim))
+                    // TarihListesi içindeki tarihleri kontrol et
+                    if (Tarihlistesi.Contains(tarih))
                     {
-                        // Tarih dosyasına ekle
-                        using (StreamWriter sw = File.AppendText(tarihDosyaYolu))
+                        string tarihDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
+
+                        // Dosya varsa ve daha önce bu kullanıcı eklenmemişse
+                        if (System.IO.File.Exists(tarihDosyaYolu) && !System.IO.File.ReadAllText(tarihDosyaYolu).Contains(İsim))
                         {
-                            sw.WriteLine(İsim);
+                            // Tarih dosyasına ekle
+                            using (StreamWriter sw = System.IO.File.AppendText(tarihDosyaYolu))
+                            {
+                                sw.WriteLine(İsim);
+                            }
                         }
-                    }
-                    if(File.Exists(tümKullanıcılarDosyaYolu) && !File.ReadAllText(tümKullanıcılarDosyaYolu).Contains(İsim))
-                    {
-                        // Tüm kullanıcılar dosyasına da ekle
-                        using (StreamWriter sw = File.AppendText(tümKullanıcılarDosyaYolu))
+                        if (System.IO.File.Exists(tümKullanıcılarDosyaYolu) && !System.IO.File.ReadAllText(tümKullanıcılarDosyaYolu).Contains(İsim))
                         {
-                            sw.WriteLine(İsim);
+                            // Tüm kullanıcılar dosyasına da ekle
+                            using (StreamWriter sw = System.IO.File.AppendText(tümKullanıcılarDosyaYolu))
+                            {
+                                sw.WriteLine(İsim);
+                            }
                         }
 
-                    }
+                        MessageBox.Show("Your information saved!");
+                        this.Close();
+                        FormCalenderJoinedWithCode formCalenderJoinedWithCode = new FormCalenderJoinedWithCode();
+                        formCalenderJoinedWithCode.Show();
 
+                    }
                 }
+
+                
+
+            }
+            else
+            {
+                MessageBox.Show("This path didn't found.");
             }
 
-            MessageBox.Show("Your information saved!");
-            this.Close();
-            FormCalenderJoinedWithCode formCalenderJoinedWithCode = new FormCalenderJoinedWithCode();
-            formCalenderJoinedWithCode.Show();
 
 
         }
+        // ///////////////DRİVE İLE DOSYA GÖNDERME//////////////////////////
+
+        static UserCredential GetCredential()
+        {
+            using (var stream = new FileStream($"{userProfilePath}\\Documents\\create\\credentials.json", FileMode.Open, FileAccess.Read))
+            {
+                string credPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                credPath = Path.Combine(credPath, ".credentials/drive-dotnet-quickstart-", FormLogin.userNameSurname, ".json");
+
+                return GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    Scopes,
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore(credPath, true)).Result;
+            }
+        }
+
+        static string UploadFile(DriveService service, string filePath)
+        {
+            var fileMetadata = new Google.Apis.Drive.v3.Data.File()
+            {
+                Name = Path.GetFileName(filePath),
+            };
+
+            FilesResource.CreateMediaUpload request;
+            using (var stream = new FileStream(filePath, FileMode.Open))
+            {
+                request = service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                request.Upload();
+            }
+
+            var file = request.ResponseBody;
+
+            Console.WriteLine($"File ID: {file.Id}");
+            return file.Id;
+        }
+
+        static void ShareFile(DriveService service, string fileId)
+        {
+            var permission = new Permission()
+            {
+                Type = "anyone",
+                Role = "reader",
+            };
+
+            service.Permissions.Create(permission, fileId).Execute();
+
+            Console.WriteLine("File shared!");
+        }
+        //////////////////////////////////////////////////////////////////////////////
+
+
         //*************Client*************************************************************************************************
         [Serializable]
         public class ExampleDTO
@@ -205,9 +298,7 @@ namespace CalenderForProject
         private void client()
         {
 
-            int port = 0;
-            Console.WriteLine(string.Format("Client Başlatıldı. Port: {0}", port));
-            Console.WriteLine("-----------------------------");
+            int port = 5555;
 
             ExampleSocket exampleSocket = new ExampleSocket(new IPEndPoint(IPAddress.Parse("127.0.0.1"), port));
             exampleSocket.Start();
@@ -223,7 +314,7 @@ namespace CalenderForProject
             {
                 Message = string.Format("{0} ip numaralı client üzerinden geliyorum!", GetLocalIPAddress()),
                 FileName = Path.GetFileName(zipFilePath),
-                FileData = File.ReadAllBytes(zipFilePath)
+                FileData = System.IO.File.ReadAllBytes(zipFilePath)
             };
 
             exampleSocket.SendData(exampleDTO);
@@ -280,17 +371,22 @@ namespace CalenderForProject
                     // Get the byte array from MemoryStream
                     byte[] serializedData = ms.ToArray();
 
-                    // Send the length of the serialized data first
-                    byte[] lengthBytes = BitConverter.GetBytes(serializedData.Length);
-                    _Socket.Send(lengthBytes);
+                    _Socket.Send(serializedData, serializedData.Length, SocketFlags.None);
 
-                    // Send the serialized data in chunks
-                    int chunkSize = 1024;
-                    for (int i = 0; i < serializedData.Length; i += chunkSize)
-                    {
-                        int remainingBytes = Math.Min(chunkSize, serializedData.Length - i);
-                        _Socket.Send(serializedData, i, remainingBytes, SocketFlags.None);
-                    }
+                    // Send the length of the serialized data first
+                    // byte[] lengthBytes = BitConverter.GetBytes(serializedData.Length);
+
+                    /*     _Socket.Send(lengthBytes);
+
+                         // Send the serialized data in chunks
+                         int chunkSize = 1024;
+                         for (int i = 0; i < serializedData.Length; i += chunkSize)
+                         {
+                             int remainingBytes = Math.Min(chunkSize, serializedData.Length - i);
+                             _Socket.Send(serializedData, i, remainingBytes, SocketFlags.None);
+                         }
+                    */
+
                 }
                 ////bu kısım örnek için kalmıştı kodun parçası değil
                 /*  using (var ms = new MemoryStream())
@@ -335,7 +431,7 @@ namespace CalenderForProject
                 catch (SocketException)
                 {
                     // Servera bağlanamama durumlarında bize SocketException fırlatıcaktır. Hataları burada handle edebilirsiniz.
-                    Console.WriteLine("Servera bağlanılamıyor!");
+                    MessageBox.Show("Servera bağlanılamıyor!");
                 }
             }
 
@@ -347,7 +443,7 @@ namespace CalenderForProject
                 if (receivedDataLength <= 0 || socketError != SocketError.Success)
                 {
                     // Gelen byte array verisi boş ise bağlantı kopmuş demektir. Burayı istediğiniz gibi handle edebilirsiniz.
-                    Console.WriteLine("Server bağlantısı koptu!");
+                    MessageBox.Show("Server bağlantısı koptu!");
                     return;
                 }
 

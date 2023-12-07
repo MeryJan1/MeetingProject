@@ -30,6 +30,7 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.gBoxTitle = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtBoxTitle = new System.Windows.Forms.TextBox();
             this.lstBoxPlans = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.buttonOkey = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.txtBoxCode = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gBoxTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,18 +65,31 @@
             // gBoxTitle
             // 
             this.gBoxTitle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gBoxTitle.Controls.Add(this.button1);
+            this.gBoxTitle.Controls.Add(this.txtBoxCode);
+            this.gBoxTitle.Controls.Add(this.label7);
             this.gBoxTitle.Controls.Add(this.txtBoxTitle);
             this.gBoxTitle.Controls.Add(this.lstBoxPlans);
             this.gBoxTitle.Controls.Add(this.label10);
             this.gBoxTitle.Controls.Add(this.label9);
             this.gBoxTitle.Controls.Add(this.richBoxDescription);
             this.gBoxTitle.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gBoxTitle.Location = new System.Drawing.Point(1248, 198);
+            this.gBoxTitle.Location = new System.Drawing.Point(1235, 148);
             this.gBoxTitle.Name = "gBoxTitle";
-            this.gBoxTitle.Size = new System.Drawing.Size(348, 495);
+            this.gBoxTitle.Size = new System.Drawing.Size(348, 610);
             this.gBoxTitle.TabIndex = 62;
             this.gBoxTitle.TabStop = false;
             this.gBoxTitle.Text = "Title :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(6, 490);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 24);
+            this.label7.TabIndex = 66;
+            this.label7.Text = "Meeting Code :";
             // 
             // txtBoxTitle
             // 
@@ -244,6 +260,27 @@
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // txtBoxCode
+            // 
+            this.txtBoxCode.BackColor = System.Drawing.Color.MistyRose;
+            this.txtBoxCode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtBoxCode.Location = new System.Drawing.Point(3, 517);
+            this.txtBoxCode.Name = "txtBoxCode";
+            this.txtBoxCode.Size = new System.Drawing.Size(342, 32);
+            this.txtBoxCode.TabIndex = 66;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkViolet;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button1.Location = new System.Drawing.Point(204, 555);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 39);
+            this.button1.TabIndex = 67;
+            this.button1.Text = "Copy Code";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormCalenderInformationPlaning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,5 +330,8 @@
         private System.Windows.Forms.Button buttonOkey;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtBoxCode;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

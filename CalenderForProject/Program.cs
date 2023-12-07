@@ -10,8 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 
-/*
-namespace ExampleDataTransferObjects
+
+/*namespace ExampleDataTransferObjects
 {
     /// <summary>
     /// Serialize edebilmek için Serializable attributü ile işaretliyoruz.
@@ -30,8 +30,8 @@ namespace CalenderForProject
 {
     internal static class Program
     {
-        /*
-        public delegate void OnExampleDTOReceived(ExampleDTO eDTO);
+        
+       /* public delegate void OnExampleDTOReceived(ExampleDTO eDTO);
         public static string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         public class Client
         {
@@ -56,7 +56,7 @@ namespace CalenderForProject
 
                 if (receivedDataLength <= 0 && socketError != SocketError.Success)
                 {
-                    Console.WriteLine("Server bağlantısı koptu!");
+                    MessageBox.Show("Server bağlantısı koptu!");
                     return;
                 }
 
@@ -71,6 +71,16 @@ namespace CalenderForProject
 
                 if (_OnExampleDTOReceived != null)
                 {
+                    if (_OnExampleDTOReceived != null)
+                    {
+                        using (var ms = new MemoryStream(resizedBuffer))
+                        {
+                            // BinaryFormatter aracılığı ile object tipimize geri deserialize işlemi gerçekleştiriyoruz ve ilgili delegate'e parametre olarak geçiyoruz.
+                            ExampleDTO exampleDTO = new BinaryFormatter().Deserialize(ms) as ExampleDTO;
+
+                            _OnExampleDTOReceived(exampleDTO);
+                        }
+                    }
                     using (MemoryStream ms = new MemoryStream(resizedBuffer))
                     using (BinaryReader reader = new BinaryReader(ms))
                     {
@@ -92,7 +102,6 @@ namespace CalenderForProject
 
                         if (exampleDTO != null && exampleDTO.FileData != null)
                         {
-                            // Dosya verisini kaydediyoruz
                             SaveFile(exampleDTO.FileName, exampleDTO.FileData);
                         }
                     }
@@ -106,25 +115,20 @@ namespace CalenderForProject
 
                 try
                 {
+                    string extractPath = $"{userProfile}\\Documents";
 
-                    string extractPath = $"{userProfile}\\Documents\\Documents";
-
-
-                    // Sunucuda alınan dosyayı kaydetmek için bir yol belirleyin
+                    // Örnek bir dosya yolu, kendi dosya yolunuzu belirtin
                     string filePath = Path.Combine(extractPath, fileName);
-
-                    // Dosyayı kaydedin
                     File.WriteAllBytes(filePath, fileData);
 
                     // dosyayı extractPath içine zipten çıkarıyor.
                     ZipFile.ExtractToDirectory(filePath, extractPath);
 
-
-                    Console.WriteLine($"File received and saved at: {extractPath}");
+                     MessageBox.Show($"File received and saved at: {extractPath}");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error saving the file: {ex.Message}");
+                    MessageBox.Show($"Error saving the file: {ex.Message}");
                 }
             }
         }
@@ -162,15 +166,11 @@ namespace CalenderForProject
             void OnExampleDTOReceived(ExampleDTO exampleDTO)
             {
 
-                // Örnek bir dosya yolu, kendi dosya yolunuzu belirtin
-                string filePath = $"{userProfile}\\Documents\\{exampleDTO.FileName}";
-                File.WriteAllBytes(filePath, exampleDTO.FileData);
-
-                Console.WriteLine($"File received and saved at: {filePath}");
+               
             }
         }
-        */
         
+        */
    
 
 
@@ -180,11 +180,8 @@ namespace CalenderForProject
         [STAThread]
         static void Main(string[] args)
         {
-           /* //server
+         /*   //server
             int port = 5555;
-            Console.WriteLine($"Server Başlatıldı. Port: {port}");
-            Console.WriteLine("-----------------------------");
-
             Listener listener = new Listener(port, 50);
             listener.Start();
 
