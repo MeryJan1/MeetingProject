@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static CalenderForProject.FormLogin;
 using static CalenderForProject.FormCalendar;
@@ -27,7 +22,7 @@ namespace CalenderForProject
 
         public void days(int numdays)
         {
-            label2.Text = numdays.ToString();
+            lblDays.Text = numdays.ToString();
             Yükle(numdays);
            
         }
@@ -51,20 +46,15 @@ namespace CalenderForProject
                 }
             }
         }
-        private void UserControlInformationPlaning_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void UserControlInformationPlaning_Click(object sender, EventArgs e)
         {
-            FormCalenderInformationPlaning.static_day = lbdays.Text;
+            FormCalenderInformationPlaning.static_day = lblDays.Text;
 
             GoogleCalender googleCalender = new GoogleCalender();
             googleCalender.Show();
 
-            FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
-            formCalenderInformationPlaning.Close();
+            this.Hide();
             
         }
     }

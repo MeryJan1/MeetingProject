@@ -31,7 +31,7 @@
             this.lbdays = new System.Windows.Forms.Label();
             this.lBox = new System.Windows.Forms.ListBox();
             this.lstBox = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbdays
@@ -66,15 +66,15 @@
             this.lstBox.Size = new System.Drawing.Size(120, 76);
             this.lstBox.TabIndex = 14;
             // 
-            // label2
+            // lblDays
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(8, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 24);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "00";
+            this.lblDays.AutoSize = true;
+            this.lblDays.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblDays.Location = new System.Drawing.Point(8, 10);
+            this.lblDays.Name = "lblDays";
+            this.lblDays.Size = new System.Drawing.Size(30, 24);
+            this.lblDays.TabIndex = 12;
+            this.lblDays.Text = "00";
             // 
             // UserControlInformationPlaning
             // 
@@ -82,12 +82,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.Controls.Add(this.lstBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblDays);
             this.Controls.Add(this.lBox);
             this.Controls.Add(this.lbdays);
             this.Name = "UserControlInformationPlaning";
             this.Size = new System.Drawing.Size(162, 100);
-            this.Load += new System.EventHandler(this.UserControlInformationPlaning_Load);
             this.Click += new System.EventHandler(this.UserControlInformationPlaning_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,6 +97,6 @@
         public System.Windows.Forms.Label lbdays;
         private System.Windows.Forms.ListBox lBox;
         private System.Windows.Forms.ListBox lstBox;
-        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lblDays;
     }
 }

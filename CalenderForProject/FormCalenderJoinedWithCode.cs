@@ -214,12 +214,11 @@ namespace CalenderForProject
                             }
                         }
 
-                        MessageBox.Show("Your information saved!");
-                        this.Close();
-                        FormCalenderJoinedWithCode formCalenderJoinedWithCode = new FormCalenderJoinedWithCode();
-                        formCalenderJoinedWithCode.Show();
-
                     }
+                    MessageBox.Show("Your information saved!");
+                    this.Close();
+                    FormCalenderJoinedWithCode formCalenderJoinedWithCode = new FormCalenderJoinedWithCode();
+                    formCalenderJoinedWithCode.Show();
                 }
 
                 

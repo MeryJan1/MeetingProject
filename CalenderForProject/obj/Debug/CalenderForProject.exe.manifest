@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalenderForProject.exe" size="604648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalenderForProject.exe" size="605160">
       <assemblyIdentity name="CalenderForProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iMU3srPdIRspg/O+qoGa4aSUjhn3RSOHCrbnAg+aFV8=</dsig:DigestValue>
+        <dsig:DigestValue>Ptz+bs5iKGC/5M4sNKXJ4B1tytJgGdRaXXE3mrJ+hPY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -52,9 +52,15 @@ namespace CalenderForProject
                     string directoryPath = Path.Combine(userProfilePath, "\\Documents\\create", userNameSurname);
                     Directory.CreateDirectory(directoryPath);
 
-                    string newFilePath = Path.Combine(directoryPath, "başlık.txt");
-                    File.Create(newFilePath).Close();
-                    
+                    if (Directory.Exists(directoryPath)) 
+                    {
+                        string newFilePath = Path.Combine(userProfilePath, "\\Documents\\create", userNameSurname, "başlık.txt");
+                        using (FileStream fs = File.Create(newFilePath))
+                        {
+                            // Dosya işlemleri burada yapılabilir
+                        }
+                    }
+                   
 
                     using (StreamWriter writer = File.AppendText(filePath))
                     {
