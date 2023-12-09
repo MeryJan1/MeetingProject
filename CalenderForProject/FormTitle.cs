@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static CalenderForProject.FormLogin;
 using static CalenderForProject.FormCalendar;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static CalenderForProject.Form1;
 
 namespace CalenderForProject
@@ -19,6 +13,7 @@ namespace CalenderForProject
     {
         public static string rastgeleKod;
         public static string TitleMeet;
+        public static string DescriptionMeet;
 
         public FormTitle()
         {
@@ -31,7 +26,7 @@ namespace CalenderForProject
             string modifiedText = TitleMeet.Replace(" ", "_");
             TitleMeet = modifiedText;
 
-            string DescriptionMeet = richBoxDescribtion.Text;
+            DescriptionMeet = richBoxDescribtion.Text;
             //kod oluştu
             int kodUzunlugu = 10;
             rastgeleKod = GenerateRandomCode(kodUzunlugu);

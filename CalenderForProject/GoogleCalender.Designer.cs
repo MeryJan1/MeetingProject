@@ -41,13 +41,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(127, 167);
+            this.label2.Location = new System.Drawing.Point(129, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 35);
             this.label2.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(174, 229);
+            this.label3.Location = new System.Drawing.Point(176, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 35);
             this.label3.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(317, 178);
+            this.label4.Location = new System.Drawing.Point(319, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 24);
             this.label4.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(484, 178);
+            this.label5.Location = new System.Drawing.Point(486, 194);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 24);
             this.label5.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(489, 235);
+            this.label6.Location = new System.Drawing.Point(491, 251);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 24);
             this.label6.TabIndex = 6;
@@ -97,7 +98,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(322, 235);
+            this.label7.Location = new System.Drawing.Point(324, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 24);
             this.label7.TabIndex = 5;
@@ -133,7 +134,7 @@
             "22",
             "23",
             "24"});
-            this.cBoxStartHours.Location = new System.Drawing.Point(394, 178);
+            this.cBoxStartHours.Location = new System.Drawing.Point(396, 194);
             this.cBoxStartHours.Name = "cBoxStartHours";
             this.cBoxStartHours.Size = new System.Drawing.Size(82, 29);
             this.cBoxStartHours.TabIndex = 8;
@@ -203,7 +204,7 @@
             "57",
             "58",
             "59"});
-            this.cBoxStartMinutes.Location = new System.Drawing.Point(580, 178);
+            this.cBoxStartMinutes.Location = new System.Drawing.Point(582, 194);
             this.cBoxStartMinutes.Name = "cBoxStartMinutes";
             this.cBoxStartMinutes.Size = new System.Drawing.Size(82, 29);
             this.cBoxStartMinutes.TabIndex = 9;
@@ -238,7 +239,7 @@
             "22",
             "23",
             "24"});
-            this.cBoxEndHours.Location = new System.Drawing.Point(394, 235);
+            this.cBoxEndHours.Location = new System.Drawing.Point(396, 251);
             this.cBoxEndHours.Name = "cBoxEndHours";
             this.cBoxEndHours.Size = new System.Drawing.Size(82, 29);
             this.cBoxEndHours.TabIndex = 10;
@@ -308,18 +309,18 @@
             "57",
             "58",
             "59"});
-            this.cBoxEndMinutes.Location = new System.Drawing.Point(580, 235);
+            this.cBoxEndMinutes.Location = new System.Drawing.Point(582, 251);
             this.cBoxEndMinutes.Name = "cBoxEndMinutes";
             this.cBoxEndMinutes.Size = new System.Drawing.Size(82, 29);
             this.cBoxEndMinutes.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Turquoise;
+            this.button1.BackColor = System.Drawing.Color.Salmon;
             this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(609, 310);
+            this.button1.Location = new System.Drawing.Point(555, 325);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 50);
+            this.button1.Size = new System.Drawing.Size(144, 42);
             this.button1.TabIndex = 12;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
@@ -329,7 +330,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(330, 66);
+            this.lblDate.Location = new System.Drawing.Point(332, 82);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(117, 38);
             this.lblDate.TabIndex = 13;
@@ -338,17 +339,30 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(133, 107);
+            this.panel1.Location = new System.Drawing.Point(135, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 5);
+            this.panel1.Size = new System.Drawing.Size(535, 5);
             this.panel1.TabIndex = 14;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBack.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(92, 31);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.Text = "<-Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // GoogleCalender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(811, 429);
+            this.BackColor = System.Drawing.Color.Turquoise;
+            this.ClientSize = new System.Drawing.Size(825, 436);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.button1);
@@ -384,5 +398,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static CalenderForProject.FormLogin;
-using static CalenderForProject.FormCalendar;
 using System.Globalization;
 using static CalenderForProject.Form1;
 
@@ -92,7 +86,7 @@ namespace CalenderForProject
         private void button1_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtBoxCode.Text);
-            MessageBox.Show("The text has been copied to the clipboard.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("The text has been copied to the clipboard.", "İnformation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

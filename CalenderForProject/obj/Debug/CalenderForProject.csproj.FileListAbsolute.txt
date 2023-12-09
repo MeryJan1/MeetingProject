@@ -23,6 +23,7 @@ C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Core.dll
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.dll
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Gmail.v1.dll
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.PlatformServices.dll
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Newtonsoft.Json.dll
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\System.CodeDom.dll
@@ -36,6 +37,8 @@ C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Core.xml
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Drive.v3.pdb
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Gmail.v1.pdb
+C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Google.Apis.Gmail.v1.xml
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\Newtonsoft.Json.xml
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\bin\Debug\System.CodeDom.xml
 C:\Users\lenovo\Documents\DENEME\1\deneme\MeetingProject\CalenderForProject\obj\Debug\CalenderForProject.csproj.AssemblyReference.cache

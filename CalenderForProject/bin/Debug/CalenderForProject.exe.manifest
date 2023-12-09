@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalenderForProject.exe" size="605160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalenderForProject.exe" size="599528">
       <assemblyIdentity name="CalenderForProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ptz+bs5iKGC/5M4sNKXJ4B1tytJgGdRaXXE3mrJ+hPY=</dsig:DigestValue>
+        <dsig:DigestValue>SWGyvRzp4leF3geCZeyK0XDBPxYL+wyzZ2mlrV/gM/s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -122,6 +122,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>m7O1YnA0UHz7v317aIJJV2Zf1+ofoQd747KPjfbNsxY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Google.Apis.Gmail.v1.dll" size="128000">
+      <assemblyIdentity name="Google.Apis.Gmail.v1" version="1.64.0.3231" publicKeyToken="4B01FA6E34DB77AB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tuTVBaPAoVInnJaFnL524dkJHbUBoA/x9p2f7JPFiIo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

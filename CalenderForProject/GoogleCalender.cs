@@ -21,7 +21,7 @@ namespace CalenderForProject
             lblDate.Text = date;
         }
        
-        private void Kaydet()
+        private void Save()
         {
             UserCredential credential;
 
@@ -51,24 +51,6 @@ namespace CalenderForProject
             endHour = Convert.ToInt32(cBoxEndHours.SelectedItem);
             endMinute = Convert.ToInt32(cBoxEndMinutes.SelectedItem);
 
-            if (int.TryParse(cBoxStartHours.SelectedItem?.ToString(), out startHour) &&
-                int.TryParse(cBoxStartMinutes.SelectedItem?.ToString(), out startMinute) &&
-                int.TryParse(cBoxEndHours.SelectedItem?.ToString(), out endHour) &&
-                int.TryParse(cBoxEndMinutes.SelectedItem?.ToString(), out endMinute))
-            {
-                // Geçerli aralık kontrolü
-                if (startHour < 0 || startHour > 23 || startMinute < 0 || startMinute > 59 ||
-                    endHour < 0 || endHour > 23 || endMinute < 0 || endMinute > 59)
-                {
-                    // Hata işleme veya kullanıcıya bildirim ekleme
-                    // Örneğin: MessageBox.Show("Geçersiz saat veya dakika değerleri!");
-                }
-            }
-            else
-            {
-                // Hata işleme veya kullanıcıya bildirim ekleme
-                // Örneğin: MessageBox.Show("Geçersiz saat veya dakika değerleri!");
-            }
             var newEvent = new Event()
             {
                 Summary = FormCalendar.title ,
@@ -114,7 +96,16 @@ namespace CalenderForProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Kaydet();
+            Save();
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
+            formCalenderInformationPlaning.Show();
+
+            this.Close();
 
         }
     }

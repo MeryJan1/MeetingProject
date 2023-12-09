@@ -31,6 +31,7 @@
             this.btnJoin = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnJoin
@@ -61,12 +62,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(295, 97);
+            this.label3.Font = new System.Drawing.Font("Lucida Handwriting", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(308, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 45);
+            this.label3.Size = new System.Drawing.Size(186, 61);
             this.label3.TabIndex = 6;
-            this.label3.Text = "LOGIN PAGE";
+            this.label3.Text = "HOME";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(229, 157);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(346, 5);
+            this.panel1.TabIndex = 7;
             // 
             // Form1
             // 
@@ -74,6 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnJoin);
@@ -91,5 +101,6 @@
         private System.Windows.Forms.Button btnJoin;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

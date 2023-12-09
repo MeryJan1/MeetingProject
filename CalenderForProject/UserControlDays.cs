@@ -46,9 +46,5 @@ namespace CalenderForProject
             }
         }
 
-        private void ucDays_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
