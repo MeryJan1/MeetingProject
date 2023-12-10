@@ -5,6 +5,10 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
 
 ## Kurulum
 
+### .EXE Dosyası ile kurulum
+
+- Setup dosyasına tıklayarak uygulamayı istediğiniz dizine kurun.
+
 ### GitHub ile kurulum
 
 - Visual Studio'ya girin ve terminali açıp aşağıdaki kodu giriniz.
@@ -22,10 +26,6 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
   Install-Package Google.Apis.Auth.OAuth2
     ```  
 - Projeyi derleyin ve çalıştırın.
-
-### .EXE Dosyası ile kurulum
-
-- Setup dosyasına tıklayarak uygulamayı istediğiniz dizine kurun.
 
 
 ## Kullanım
