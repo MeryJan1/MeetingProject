@@ -28,8 +28,19 @@ namespace CalenderForProject
         private void Save()
         {
             UserCredential credential;
+            string credentialsPath;
             string userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            string credentialsPath = $"{userProfilePath}\\Desktop\\credentials.json";
+            if(System.IO.File.Exists($"{userProfilePath}\\OneDrive")) 
+            {
+                credentialsPath = $"{userProfilePath}\\OneDrive\\Desktop\\credentials.json";
+            }
+            else
+            {
+                credentialsPath = $"{userProfilePath}\\Desktop\\credentials.json";
+            }
+
+            
+            
             using (var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read))
             {
                 string credPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
