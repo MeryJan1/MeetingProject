@@ -68,7 +68,8 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
   
   ![image](https://github.com/MeryJan1/MeetingProject/assets/125815842/8f1679b5-3e7e-48a4-80c4-1078c5447988)
 
-- Google Takvim uygulamasına kaydediliyor ve Google Takvim uygulamasına gidiyor.
+- Google Takvim uygulamasına kaydediliyor ve Google Takvim uygulamasına gidiyor
+- **NOT:** Google Takvim Eklentisini kullanmak için iletişim bölümünde yer alan mail adresine uygulamanın kullanım gerekçesiyle birlikte mail adresinizi göndermelisiniz.
 
   ![image](https://github.com/MeryJan1/MeetingProject/assets/125815842/0ddcfb1a-4ab0-4e2a-8f1e-aedfdf7828b7)
 
