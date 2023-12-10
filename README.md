@@ -10,6 +10,7 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
 -   Öncelikle indirilen dosyayı zipten çıkarın.
 -   Daha sonra setup dosyasına tıklayarak uygulamayı açın Windows kişisel bilgisayarınızı korudu diye bir bildirim gelirse önce altı çizili Ek bilgi yazısına daha sonra Yine de çalıştır yazısına tıklayınız.
 -   Çıkan ekrandan yükle butonuna basınız.
+-   Eğer takvim kullanacaksanız credentials.json dosyasını masaüstüne atın.
 
 
 ### GitHub ile kurulum
