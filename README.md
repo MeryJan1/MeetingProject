@@ -38,7 +38,7 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
  
 ### Plan OLuşturma :
 
-- Create a Planing tuşuna basınız ve isim soyisisn bilgilerini giriniz.
+- Create a Planing tuşuna basınız ve isim soyisim bilgilerini giriniz.
   
   ![image](https://github.com/MeryJan1/MeetingProject/assets/125815842/edb242c7-c8eb-456f-b1ad-8a86c0f7c9e3)
 
