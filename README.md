@@ -86,11 +86,6 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
 ## Bağımlılıklar
 
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
-  
-  
-## Lisans
-
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır - Detaylı bilgi için [LICENSE](LICENSE) dosyasına bakın.
 
 
 ## İletişim
