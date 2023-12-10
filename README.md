@@ -68,9 +68,9 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
   
   ![image](https://github.com/MeryJan1/MeetingProject/assets/125815842/8f1679b5-3e7e-48a4-80c4-1078c5447988)
 
--  google takviminize kaydedilsin ve gidilsin takviminiz açılsın
+- Google Takvim uygulamasına kaydediliyor ve Google Takvim uygulamasına gidiyor.
 
-  ![image](https://github.com/MeryJan1/MeetingProject/assets/125815842/f00e7af1-69b7-4384-9222-6914dab594cc)
+  ![image](https://github.com/MeryJan1/MeetingProject/assets/125815842/0ddcfb1a-4ab0-4e2a-8f1e-aedfdf7828b7)
 
 ### Kod ile uygun tarih seçme:
 
