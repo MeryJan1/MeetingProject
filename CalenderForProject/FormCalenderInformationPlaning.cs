@@ -29,10 +29,10 @@ namespace CalenderForProject
         private void loadTxtBox()
         {
             
-            string filePath = Path.Combine(userProfilePath,"Documents\\create", FormLogin.userNameSurname, FormCalendar.title, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
-            string file = Path.Combine(userProfilePath,"Documents\\create", FormLogin.userNameSurname , FormCalendar.title, "Description.txt");
+            string filePath = Path.Combine(userProfilePath,"create", FormLogin.userNameSurname, FormCalendar.title, "GirişYapanlar.txt");//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
+            string file = Path.Combine(userProfilePath,"create", FormLogin.userNameSurname , FormCalendar.title, "Description.txt");
             txtBoxTitle.Text = FormCalendar.title;
-            string path = $"{userProfilePath}\\Documents\\create\\Dictionary\\Başlık.txt";
+            string path = $"{userProfilePath}\\create\\Dictionary\\Başlık.txt";
             Dictionary<string, string> DicCode = new Dictionary<string, string>();
             using (StreamReader sr = new StreamReader(path))
             {

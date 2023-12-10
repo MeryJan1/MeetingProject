@@ -26,7 +26,7 @@ namespace CalenderForProject
             string modifiedText = userNameSurname.Replace(" ", "_");
             userNameSurname = modifiedText;
 
-            string filePath = $"{userProfilePath}\\Documents\\create\\isim.txt";
+            string filePath = $"{userProfilePath}\\create\\isim.txt";
             if (File.Exists(filePath))
             {
                 // Dosya içeriğini okuyun
@@ -36,12 +36,12 @@ namespace CalenderForProject
                 if (!fileContent.Contains(userNameSurname))
                 {
                     // create/userNameSurname dizinini oluşturun
-                    string directoryPath = $"{userProfilePath}\\Documents\\create\\{userNameSurname}";
+                    string directoryPath = $"{userProfilePath}\\create\\{userNameSurname}";
                     Directory.CreateDirectory(directoryPath);
 
                     if (Directory.Exists(directoryPath)) 
                     {
-                        string newFilePath = $"{userProfilePath}\\Documents\\create\\{userNameSurname}\\başlık.txt";
+                        string newFilePath = $"{userProfilePath}\\create\\{userNameSurname}\\başlık.txt";
                         using (FileStream fs = File.Create(newFilePath))
                         {
                             // Dosya işlemleri burada yapılabilir

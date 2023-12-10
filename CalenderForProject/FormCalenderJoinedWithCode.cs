@@ -28,8 +28,8 @@ namespace CalenderForProject
 
         private void loadBox()
         {
-            string filePath = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
-            string file = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Description.txt";
+            string filePath = $"{userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";//GİRİŞ YAPMIŞ KİŞİLER LİSTELENECEK 
+            string file = $"{userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\Description.txt";
             txtBoxTitle.Text = FormCalendar.title;
             if (System.IO.File.Exists(file))
             {
@@ -141,8 +141,8 @@ namespace CalenderForProject
         {
            
             
-            string tümTarihler = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
-            string tümKullanıcılarDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";
+            string tümTarihler = $"{userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
+            string tümKullanıcılarDosyaYolu = $"{userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\GirişYapanlar.txt";
 
 
             // Tüm tarihleri oku
@@ -155,7 +155,7 @@ namespace CalenderForProject
                     // TarihListesi içindeki tarihleri kontrol et
                     if (Tarihlistesi.Contains(tarih))
                     {
-                        string tarihDosyaYolu = $"{userProfilePath}\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
+                        string tarihDosyaYolu = $"{userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
 
                         // Dosya varsa ve daha önce bu kullanıcı eklenmemişse
                         if (System.IO.File.Exists(tarihDosyaYolu) && !System.IO.File.ReadAllText(tarihDosyaYolu).Contains(İsim))

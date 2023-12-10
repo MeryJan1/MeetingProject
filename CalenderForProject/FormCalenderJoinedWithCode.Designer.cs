@@ -278,7 +278,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(116, 35);
             this.btnHome.TabIndex = 77;
-            this.btnHome.Text = "Return Home";
+            this.btnHome.Text = "<Home|";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 

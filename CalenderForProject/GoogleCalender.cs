@@ -8,6 +8,10 @@ using System.IO;
 using System.Threading;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Google.Apis.Drive.v3;
+using Google.Apis.Drive.v3.Data;
+using System.Net;
+using System.Xml.Linq;
 
 namespace CalenderForProject
 {
@@ -24,8 +28,8 @@ namespace CalenderForProject
         private void Save()
         {
             UserCredential credential;
-
-            using (var stream = new FileStream($"{Form1.userProfilePath}\\Documents\\credentials.json", FileMode.Open, FileAccess.Read))
+            string credentialsPath = "C:\\Users\\lenovo\\Documents\\DENEME\\1\\deneme\\MeetingProject\\CalenderForProject\\Credentials\\credentials.json";
+            using (var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read))
             {
                 string credPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
                 credPath = Path.Combine(credPath, ".credentials/calendar-dotnet-quickstart.json");
@@ -42,7 +46,7 @@ namespace CalenderForProject
             var service = new CalendarService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = FormLogin.userNameSurname,
+                ApplicationName = "Project",
             });
 
             int startHour, startMinute, endHour, endMinute;
@@ -57,12 +61,12 @@ namespace CalenderForProject
                 Description = FormCalenderInformationPlaning.description,
                 Start = new EventDateTime
                 {
-                    DateTime = new DateTime(Convert.ToInt16(FormCalenderInformationPlaning.static_year), Convert.ToInt16(FormCalenderInformationPlaning.static_month), Convert.ToInt16(FormCalenderInformationPlaning.static_day), startHour, startMinute, 0),
+                    DateTime = new DateTime(Convert.ToInt32(FormCalenderInformationPlaning.static_year), Convert.ToInt32(FormCalenderInformationPlaning.static_month), Convert.ToInt16(FormCalenderInformationPlaning.static_day), startHour, startMinute, 0),
                     TimeZone = "Europe/Istanbul",
                 },
                 End = new EventDateTime
                 {
-                    DateTime = new DateTime(Convert.ToInt16(FormCalenderInformationPlaning.static_year), Convert.ToInt16(FormCalenderInformationPlaning.static_month), Convert.ToInt16(FormCalenderInformationPlaning.static_day), endHour, endMinute, 0),
+                    DateTime = new DateTime(Convert.ToInt32(FormCalenderInformationPlaning.static_year), Convert.ToInt32(FormCalenderInformationPlaning.static_month), Convert.ToInt32(FormCalenderInformationPlaning.static_day), endHour, endMinute, 0),
                     TimeZone = "Europe/Istanbul",
                 },
             };
@@ -105,7 +109,7 @@ namespace CalenderForProject
             FormCalenderInformationPlaning formCalenderInformationPlaning = new FormCalenderInformationPlaning();
             formCalenderInformationPlaning.Show();
 
-            this.Close();
+            Close();
 
         }
     }

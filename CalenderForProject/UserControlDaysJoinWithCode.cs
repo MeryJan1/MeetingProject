@@ -32,8 +32,8 @@ namespace CalenderForProject
         {
             lbdays.Text = numdays + "";
             string tarih = numdays+"."+ FormCalenderJoinedWithCode.Static_Month + "." + FormCalenderJoinedWithCode.Static_Year;
-            string file = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
-            string path = $"C:\\Users\\lenovo\\Documents\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
+            string file = $"{Form1.userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\TümTarihler.txt";
+            string path = $"{Form1.userProfilePath}\\create\\{KullanıcıAdı}\\{Başlık}\\Dates\\{tarih}.txt";
 
             string[] tarihler = File.ReadAllLines(file) ;
 

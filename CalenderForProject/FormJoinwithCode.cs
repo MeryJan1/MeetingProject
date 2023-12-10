@@ -28,7 +28,7 @@ namespace CalenderForProject
             Dictionary<string, string> DicName = new Dictionary<string, string>();
             Dictionary<string, string> DicTitle = new Dictionary<string, string>();
             
-            string filePath = $"{userProfilePath}\\Documents\\create\\Dictionary\\KullanıcıAdı.txt";
+            string filePath = $"{userProfilePath}\\create\\Dictionary\\KullanıcıAdı.txt";
             using (StreamReader sr = new StreamReader(filePath))
             {
                 string line;
@@ -48,7 +48,7 @@ namespace CalenderForProject
             }
 
 
-            string path = $"{userProfilePath}\\Documents\\create\\Dictionary\\Başlık.txt";
+            string path = $"{userProfilePath}\\create\\Dictionary\\Başlık.txt";
             using (StreamReader sr = new StreamReader(path))
             {
                 string line;
@@ -74,7 +74,7 @@ namespace CalenderForProject
 
             DateTime accessTime = DateTime.Now; // Şu anki tarih ve saat
             string accessTimeString = accessTime.ToString("dd.MM.yyyy HH:mm:ss");
-            string değişken = $"{userProfilePath}\\Documents\\create\\code.txt";
+            string değişken = $"{userProfilePath}\\create\\code.txt";
             string[] fileLines = File.ReadAllLines(değişken);
             
 

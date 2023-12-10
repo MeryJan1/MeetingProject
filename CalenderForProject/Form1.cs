@@ -7,7 +7,7 @@ namespace CalenderForProject
 {
     public partial class Form1 : Form //server form
     {
-        public static string userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        public static string userProfilePath = AppDomain.CurrentDomain.BaseDirectory;
 
         public Form1()
         {
@@ -32,7 +32,7 @@ namespace CalenderForProject
 
         private void Form()
         {
-            string directoryPath = $"{userProfilePath}\\Documents\\create";
+            string directoryPath = $"{userProfilePath}\\create";
 
             // "create" dizini yoksa oluşturun
             if (!Directory.Exists(directoryPath))

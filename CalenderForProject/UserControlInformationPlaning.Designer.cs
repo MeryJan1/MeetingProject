@@ -30,7 +30,6 @@
         {
             this.lbdays = new System.Windows.Forms.Label();
             this.lBox = new System.Windows.Forms.ListBox();
-            this.lstBox = new System.Windows.Forms.ListBox();
             this.lblDays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,17 +54,6 @@
             this.lBox.Size = new System.Drawing.Size(120, 76);
             this.lBox.TabIndex = 11;
             // 
-            // lstBox
-            // 
-            this.lstBox.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lstBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lstBox.FormattingEnabled = true;
-            this.lstBox.ItemHeight = 18;
-            this.lstBox.Location = new System.Drawing.Point(35, 24);
-            this.lstBox.Name = "lstBox";
-            this.lstBox.Size = new System.Drawing.Size(120, 76);
-            this.lstBox.TabIndex = 14;
-            // 
             // lblDays
             // 
             this.lblDays.AutoSize = true;
@@ -81,7 +69,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.Controls.Add(this.lstBox);
             this.Controls.Add(this.lblDays);
             this.Controls.Add(this.lBox);
             this.Controls.Add(this.lbdays);
@@ -96,7 +83,6 @@
         #endregion
         public System.Windows.Forms.Label lbdays;
         private System.Windows.Forms.ListBox lBox;
-        private System.Windows.Forms.ListBox lstBox;
         public System.Windows.Forms.Label lblDays;
     }
 }

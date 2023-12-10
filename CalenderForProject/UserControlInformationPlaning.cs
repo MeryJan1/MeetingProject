@@ -5,6 +5,12 @@ using System.Linq;
 using System.Windows.Forms;
 using static CalenderForProject.FormLogin;
 using static CalenderForProject.FormCalendar;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Calendar.v3.Data;
+using Google.Apis.Calendar.v3;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
+using Google.Apis.Drive.v3;
 
 namespace CalenderForProject
 {
@@ -30,8 +36,8 @@ namespace CalenderForProject
         private void Yükle(int numdays)
         {
             string tarih = numdays + "." + FormCalenderInformationPlaning. static_month + "." + FormCalenderInformationPlaning. static_year;
-            string file = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{title}\\Dates\\TümTarihler.txt"; ;
-            string path = $"C:\\Users\\lenovo\\Documents\\create\\{userNameSurname}\\{title}\\Dates\\{tarih}.txt";
+            string file = $"{Form1.userProfilePath}\\create\\{userNameSurname}\\{title}\\Dates\\TümTarihler.txt"; ;
+            string path = $"{Form1.userProfilePath}\\create\\{userNameSurname}\\{title}\\Dates\\{tarih}.txt";
             string[] tarihler = File.ReadAllLines(file);
 
             if (tarihler.Contains(tarih))
@@ -42,7 +48,7 @@ namespace CalenderForProject
                 // Her bir satırı ListBox'a ekle
                 foreach (string line in lines)
                 {
-                    lstBox.Items.Add(line);
+                    lBox.Items.Add(line);
                 }
             }
         }
@@ -54,8 +60,9 @@ namespace CalenderForProject
             GoogleCalender googleCalender = new GoogleCalender();
             googleCalender.Show();
 
-            this.Hide();
-            
+            Form parentForm = this.FindForm(); // Kullanıcı kontrolünün bağlı olduğu formu bul
+            parentForm.Close();
+
         }
     }
 }
