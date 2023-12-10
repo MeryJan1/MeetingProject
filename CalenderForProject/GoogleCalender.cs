@@ -28,7 +28,8 @@ namespace CalenderForProject
         private void Save()
         {
             UserCredential credential;
-            string credentialsPath = "C:\\Users\\lenovo\\Documents\\DENEME\\1\\deneme\\MeetingProject\\CalenderForProject\\Credentials\\credentials.json";
+            string userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string credentialsPath = $"{userProfilePath}\\Desktop\\credentials.json";
             using (var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read))
             {
                 string credPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
