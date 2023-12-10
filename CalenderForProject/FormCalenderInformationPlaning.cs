@@ -102,7 +102,9 @@ namespace CalenderForProject
             month = now.Month;
             year = now.Year;
 
-            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+            DateTimeFormatInfo dateTimeFormatInfo = culture.DateTimeFormat;
+            string monthname = dateTimeFormatInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
 
             static_year = year.ToString();
@@ -137,22 +139,25 @@ namespace CalenderForProject
         private void btnPrevious_Click(object sender, EventArgs e)
         {
 
-            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            month--;
             // clear container
             daycontainer.Controls.Clear();
+            month--;
 
-            if (monthname == "January")
+            if (month == 0)
             {
                 year--;
                 month = 12;
             }
 
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+            DateTimeFormatInfo dateTimeFormatInfo = culture.DateTimeFormat;
+            string monthname = dateTimeFormatInfo.GetMonthName(month);
+
+            LBDATE.Text = monthname + " " + year;
+
             static_year = year.ToString();
             static_month = month.ToString();
 
-            monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            LBDATE.Text = monthname + " " + year;
 
             DateTime startofthemonth = new DateTime(year, month, 1);
 
@@ -181,23 +186,25 @@ namespace CalenderForProject
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             // clear container
             daycontainer.Controls.Clear();
 
-            if (monthname == "December")
+            month++;
+
+            if (month == 13)
             {
                 year++;
-                month = 0;
+                month = 1;
             }
 
-            month++;
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+            DateTimeFormatInfo dateTimeFormatInfo = culture.DateTimeFormat;
+            string monthname = dateTimeFormatInfo.GetMonthName(month);
+            LBDATE.Text = monthname + " " + year;
 
             static_year = year.ToString();
             static_month = month.ToString();
 
-            monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            LBDATE.Text = monthname + " " + year;
 
             DateTime startofthemonth = new DateTime(year, month, 1);
 
