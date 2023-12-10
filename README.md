@@ -7,7 +7,10 @@ Bu proje, Windows Form uygulaması uygulaması ile yapılmıştır. Amacı farkl
 
 ### .EXE Dosyası ile kurulum
 
-- Setup dosyasına tıklayarak uygulamayı istediğiniz dizine kurun.
+-   Öncelikle indirilen dosyayı zipten çıkarın.
+-   Daha sonra setup dosyasına tıklayarak uygulamayı açın Windows kişisel bilgisayarınızı korudu diye bir bildirim gelirse önce altı çizili Ek bilgi yazısına daha sonra Yine de çalıştır yazısına tıklayınız.
+-   Çıkan ekrandan yükle butonuna basınız.
+
 
 ### GitHub ile kurulum
 
